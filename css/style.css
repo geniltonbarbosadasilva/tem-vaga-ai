@@ -90,6 +90,7 @@ input {
   width: 100%;
   padding: 6px 6px 6px 35px;
   font-family: inherit;
+  outline: none;
 }
 
 .search-btn{
