@@ -1,0 +1,233 @@
+body {
+  background-color: #FFFFFF;
+  margin: 0px;
+  font-family: 'Roboto Mono', monospace;
+}
+
+header {
+  width: 100%;
+  background: #FF491B;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+.navbar{
+  display: flex;
+}
+
+.logo{
+  margin: 0px 2%;
+  display: inline;
+  width: 150px;
+}
+
+.logo img {
+  margin: 8px;
+  width: 150px;
+}
+
+.menu {
+  right: 0;
+  margin-right: 8px;
+  width: 45%;
+  height: 5%;
+}
+
+.menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 2% 0% 0% 0%;
+  text-align: center;
+}
+
+.menu ul li {
+  float: left;
+  display: inline;
+}
+
+.menu ul li a {
+  transition: background-color 2s;
+  transition-timing-function: ease;
+  padding: 14px 16px;
+  height: 100%;
+  background: #f8b732;
+  color: #FFFFFF;
+  text-decoration: none;
+  margin: 0;
+  border: 0;
+}
+
+.menu ul li:first-child a {
+  border-radius: 30px 0px 0px 30px;
+}
+
+.menu ul li:last-child a {
+  border-radius: 0px 0px 30px 0px;
+}
+
+.menu ul li a:hover {
+  color: #f8b732;
+  background-color: #FFFFFF;
+  text-decoration: none;
+}
+
+form{
+  display: flex;
+  width: 40%;
+}
+
+input {
+  height: 30px;
+  margin-left: 20px;
+  margin-top: 15px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .2);
+  border: none;
+  z-index: 915;
+  color: #221;
+  font-size: 16px;
+  border-radius: 5px;
+  width: 100%;
+  padding: 6px 6px 6px 35px;
+  font-family: inherit;
+}
+
+.search-btn{
+  transition: background-color 2s;
+  transition-timing-function: ease;
+  background-color: #FFFFFF;
+  color: #f8b732;
+  border: none;
+  border-radius: 5px;
+  font-family: inherit;
+  padding: 6px 6px 6px 35px;
+  margin: 15px;
+  font-size: 16px;
+  height: 42px;
+}
+
+.search-btn:hover{
+  background-color: #f8b732;
+  color: #FFFFFF;
+}
+
+.dropdown{
+  width: 70%;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  width: 30%;
+  position: absolute;
+  background-color: #FFFFFF;
+  border-radius: 5px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #FFFFFF;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px;
+  text-decoration: none;
+  border-radius: 5px;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f8b732
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+.heighttext {
+  font-family: "Lucida Console", Courier, monospace;
+  margin-left: 200px;
+  color: #696969;
+  border-radius: 50px;
+  height: 30px;
+  font-weight: bold;
+}
+
+footer {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  width: 100%;
+  text-align: center;
+  background-color: #FF491B;
+  color: white;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 10px;
+  padding: 10px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #008CBA;
+}
+
+.container:hover .overlay {
+  opacity: 1;
+}
+
+.painel {
+  alt: "Italian Trulli";
+  width: 300px;
+  height: 100;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #008CBA;
+}
+
+.container:hover .overlay {
+  opacity: 1;
+}
+
+.um_resultado {
+  alt: "Italian Trulli";
+  width: 500px;
+  height: 100;
+}
+
+.item{
+  background-color: #ffffff;
+  
+}
+
+.item img{
+  padding: 15px;
+}
+
+.item p{
+  padding: 0px 15px;
+}
