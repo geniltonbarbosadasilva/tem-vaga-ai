@@ -13,10 +13,18 @@
   <header>
     <div class="navbar">
       <div class="logo" id="logo">
-        <img src="../img/logo.png" alt="logo">
+        <a href="index.html"><img src="../img/logo.png" alt="logo"></a>
       </div>
 
-      <form autocomplete="off">
+      <form autocomplete="off" class="form-home">
+        <input id="search-id" type="text" id="fname" name="fname" placeholder="Para onde?">
+        <input id="search-id" type="number" id="fname" name="fname" placeholder="quantas pessoas?">
+        <input id="search-id" type="date" id="fname" name="fname" placeholder="quando?">
+
+        <button type="submit" class="search-btn">Buscar</button>
+      </form>
+
+      <!-- <form autocomplete="off">
         <div class="dropdown">
           <input id="search-id" type="text" id="fname" name="fname" placeholder="O que você procura hoje?"><br>
           <div class="dropdown-content">
@@ -27,14 +35,12 @@
           </div>
         </div>
         <button type="submit" class="search-btn">Buscar</button>
-      </form>
+      </form> -->
 
       <div class="menu">
         <ul>
           <li><a href="#">Entre</a></li>
-          <li><a href="#">Fale conosco</a></li>
-          <li><a href="uma.html">Uma consulta</a></li>
-          <li><a href="#">Varias consultas</a></li>
+          <li><a href="#">Seja um anfitrião</a></li>                    
         </ul>
       </div>
     </div>
@@ -95,19 +101,19 @@
   </footer>
 
   <script>
-    
-    window.onscroll = function() {scrollFunction()};
+
+    window.onscroll = function () { scrollFunction() };
 
     function scrollFunction() {
-      if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {        
+      if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
         document.getElementById("logo").style.width = "150px";
       } else {
         document.getElementById("logo").style.width = "200px";
       }
     }
 
-    function fillField(elem){
-      document.getElementById('search-id').value=elem.text;
+    function fillField(elem) {
+      document.getElementById('search-id').value = elem.text;
     }
 
   </script>

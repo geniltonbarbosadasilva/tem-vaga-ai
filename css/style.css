@@ -1,5 +1,5 @@
 body {
-  background-color: #FFFFFF;
+  background-color: #FFFFFF;;
   margin: 0px;
   font-family: 'Roboto Mono', monospace;
 }
@@ -13,14 +13,15 @@ header {
 }
 
 .navbar{
-  display: flex;
+  display: grid;
+  grid-template-columns: auto auto auto;
 }
 
 .logo{
   margin: 0px 2%;
   display: inline;
-  width: 200px;
-  transition: 0.4s;
+  max-width: 200px;
+  transition: 0.8s;
 }
 
 .logo img {
@@ -29,9 +30,8 @@ header {
 }
 
 .menu {
-  right: 0;
   margin-right: 8px;
-  width: 45%;
+  max-width: 300px;
   height: 5%;
 }
 
@@ -67,26 +67,19 @@ header {
   border-radius: 0px 0px 30px 0px;
 }
 
-@media only screen and (max-width: 1323px) {
-  .menu ul li:nth-child(n) a {
-    border-radius: 30px 30px 30px 30px;
-  }
-}
-
 .menu ul li a:hover {
   color: #f8b732;
   background-color: #FFFFFF;
   text-decoration: none;
 }
 
-form{
-  display: flex;
-  width: 40%;
+.form-home{
+  text-align:center;
 }
 
 input {
   height: 30px;
-  margin-left: 20px;
+  margin-left: 10px;
   margin-top: 15px;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .2);
   border: none;
@@ -94,8 +87,8 @@ input {
   color: #221;
   font-size: 16px;
   border-radius: 5px;
-  width: 100%;
-  padding: 6px 6px 6px 35px;
+  width: auto;
+  padding: 6px;
   font-family: inherit;
   outline: none;
 }
@@ -108,10 +101,11 @@ input {
   border: none;
   border-radius: 5px;
   font-family: inherit;
-  padding: 6px 6px 6px 35px;
-  margin: 15px;
+  padding: 6px;
+  margin: 15px 10px;
   font-size: 16px;
   height: 42px;
+  outline: none;
 }
 
 .search-btn:hover{
@@ -176,9 +170,10 @@ footer {
 
 .grid-container {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto auto auto auto;
   grid-gap: 10px;
-  padding: 10px;
+  margin: 3%;
+  background-color: #FFFFFF;
 }
 
 .overlay {
@@ -229,13 +224,26 @@ footer {
 
 .item{
   background-color: #ffffff;
-  
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .5);
+  border: none;
+  color: #221;
+  font-size: 16px;
+  border-radius: 5px;
 }
 
 .item img{
-  padding: 15px;
 }
 
-.item p{
-  padding: 0px 15px;
+
+@media only screen and (max-width: 1200px) {
+  .menu ul li:nth-child(n) a {
+    border-radius: 30px 30px 30px 30px;
+    font-size: 10px;
+  }
+  .form-home input{
+    font-size: 10px;
+  }
+  .logo img {
+    width: 100px;
+  }
 }

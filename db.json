@@ -1,0 +1,133 @@
+{
+    "imoveis": [
+        {
+            "id": 1,
+            "title": "Loft inteiro",
+            "price": "R$ 110/noite",
+            "Address": "Montes Claros/MG",
+            "description": "Casa completa em condomínio",
+            "img-urls": ""
+        },
+        {
+            "id": 2,
+            "title": "Apartamento Inteiro",
+            "price": "R$ 47/noite",
+            "Address": "Montes Claros/MG",
+            "description": "Para hospedagem ou trabalho, wi-fi centro de MOC",
+            "img-urls": ""
+        },
+        {
+            "id": 3,
+            "title": "Casa inteira",
+            "price": "R$ 70/noite",
+            "Address": "Montes Claros/MG",
+            "description": "Casa completa em condomínio Montes Claros/MG",
+            "img-urls": ""
+        },
+        {
+            "id": 4,
+            "title": "Quarto inteira",
+            "price": "R$ 79/noite",
+            "Address": "Montes Claros/MG",
+            "description": "Hotel em Montes Claros, MG.",
+            "img-urls": ""
+        },
+        {
+            "id": 5,
+            "title": "Apartamento inteiro",
+            "price": "R$ 100/noite",
+            "Address": "Vitória da Conquista/BA",
+            "description": "Apartamento próximo ao Shopping Conquista Sul",
+            "img-urls": ""
+        },
+        {
+            "id": 6,
+            "title": "Condomínio inteiro",
+            "price": "R$ 86/noite",
+            "Address": "Vitória da Conquista/BA",
+            "description": "Apartamento NOVO e bem decorado 102",
+            "img-urls": ""
+        },
+        {
+            "id": 7,
+            "title": "Condomínio inteiro",
+            "price": "R$ 86/noite",
+            "Address": "Vitória da Conquista/BA",
+            "description": "Apartamento NOVO e bem decorado 102",
+            "img-urls": ""
+        },
+        {
+            "id": 8,
+            "title": "Condomínio inteiro",
+            "price": "R$ 90/noite",
+            "Address": "Vitória da Conquista/BA",
+            "description": "Conforto e tranquilidade perto de tudo!",
+            "img-urls": ""
+        },
+        {
+            "id": 9,
+            "title": "Casa inteiro",
+            "price": "R$ 20/noite",
+            "Address": "Janauba/MG",
+            "description": "Apartamento NOVO e bem decorado 102",
+            "img-urls": ""
+        },
+        {
+            "id": 10,
+            "title": "Quarto inteiro",
+            "price": "R$ 20/noite",
+            "Address": "Janauba/MG",
+            "description": "Conforto e tranquilidade perto de tudo!",
+            "img-urls": ""
+        },
+        {
+            "id": 11,
+            "title": "Apartamento inteiro",
+            "price": "R$ 50/noite",
+            "Address": "Janauba/MG",
+            "description": "Bem localizado",
+            "img-urls": ""
+        },
+        {
+            "id": 12,
+            "title": "Sítio inteiro",
+            "price": "R$ 250/noite",
+            "Address": "Mato Verde/MG",
+            "description": "Sítio Rupestre Almacalma",
+            "img-urls": ""
+        },
+        {
+            "id": 13,
+            "title": "Loft inteiro",
+            "price": "R$ 250/noite",
+            "Address": "Belo Horizonte/MG",
+            "description": "Conforto e luxo!",
+            "img-urls": ""
+        },
+        {
+            "id": 14,
+            "title": "Loft Compartilhado",
+            "price": "R$ 50/noite",
+            "Address": "Belo Horizonte/MG",
+            "description": "Banheiro individual",
+            "img-urls": ""
+        },
+        {
+            "id": 15,
+            "title": "Suite inteiro",
+            "price": "R$ 60/noite",
+            "Address": "Belo Horizonte/MG",
+            "description": "Banheiro individual",
+            "img-urls": ""
+        },        
+        {
+            "id": 16,
+            "title": "Fazenda inteiro",
+            "price": "R$ 500/noite",
+            "Address": "Ouro Preto/MG",
+            "description": "Eco turismo",
+            "img-urls": ""
+        }                
+    ],
+    "users":[{}]
+}
