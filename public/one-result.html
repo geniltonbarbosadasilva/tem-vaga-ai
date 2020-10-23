@@ -4,8 +4,12 @@
 <head>
   <meta charset="utf-8">
   <title>Tem Vaga ai</title>
+  <link rel="shortcut icon" href="../img/ico.png" >
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@600&display=swap" rel="stylesheet">
   <link href="https://getbootstrap.com/docs/4.5/examples/album/album.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="../css/style.css">
+  <script src="../js/animation.js"></script>
+  <script src="../js/app.js"></script>
 </head>
 
 <body>
@@ -15,49 +19,40 @@
         <a href="index.html"><img src="../img/logo.png" alt="logo"></a>
       </div>
 
-      <form autocomplete="off">
+      <form autocomplete="off" class="form-home">
         <div class="dropdown">
-          <input id="search-id" type="text" id="fname" name="fname" placeholder="O que você procura hoje?"><br>
+          <input id="search-id" type="text" id="fname" name="fname" placeholder="Para onde?">
           <div class="dropdown-content">
-            <a onclick="fillField(this)">Quarto</a>
-            <a onclick="fillField(this)">Casa</a>
-            <a onclick="fillField(this)">República</a>
-            <a onclick="fillField(this)">Apartamento</a>
+            <a onclick="fillField(this)">Belo Horizonte</a>
+            <a onclick="fillField(this)">Montes Claros</a>
+            <a onclick="fillField(this)">Ouro Preto</a>
+            <a onclick="fillField(this)">Vitoria da Conquista</a>
           </div>
         </div>
+        <input id="search-id" type="number" id="fname" name="fname" placeholder="quantas pessoas?">
+        <input id="search-id" type="date" id="fname" name="fname" placeholder="quando?">
+
         <button type="submit" class="search-btn">Buscar</button>
       </form>
 
       <div class="menu">
         <ul>
-          <li><a href="#">Entre</a></li>
-          <li><a href="#">Fale conosco</a></li>
-          <li><a href="uma.html">Uma consulta</a></li>
-          <li><a href="#">Varias consultas</a></li>
+          <li><a href="login.html">Entre</a></li>
+          <li><a href="">Seja um anfitrião</a></li>
         </ul>
       </div>
     </div>
   </header>
 
-
-  <div class="container">
-    <div>
-      <h3> Casa de praia para 10 pessoas | Rio de Janeiro </h3>
-    </div>
-
-    <div>
-      <img src="https://www.vaipradisney.com/blog/wp-content/uploads/2017/04/ALUGUEL-CASA-26.jpg" class="um_resultado">
-      <p class="description">It is a long established fact that a reader will be distracted by the ..</p>
-
-    </div>
-
-  </div>
-  </div>
-
+  <div id="Container-content"></div>
 
   <footer>
     Não importa para onde você vá, temos uma vaga para você!
   </footer>
+
+  <script>
+  </script>
+
 </body>
 
 </html>
