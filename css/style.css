@@ -220,15 +220,44 @@ input {
 }
 
 footer {
-  height: 50px;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
   width: 100%;
   text-align: center;
   background-color: #FF491B;
   color: white;
 }
 
+footer ul{
+  list-style-type: none;
+}
 
-@media only screen and (max-width: 1200px) {
+footer ul li:first-child{
+  display: inline-flex;
+  margin: 10px;
+}
+
+footer ul li{
+  display: inline-flex;
+  margin: 10px 5px;
+}
+
+
+footer ul li svg{
+  height: 18px; 
+  width: 18px; 
+  display: block; 
+  fill: currentcolor;
+}
+
+footer ul li svg:hover{
+  height: 18px; 
+  width: 18px; 
+  display: block; 
+  fill: #f8b732;
+}
+
+@media only screen and (max-width: 900px) {
   .menu ul li:nth-child(n) a {
     border-radius: 30px 30px 30px 30px;
     font-size: 10px;
