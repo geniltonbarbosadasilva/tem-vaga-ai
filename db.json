@@ -6,7 +6,11 @@
             "price": "R$ 110/noite",
             "Address": "Montes Claros/MG",
             "description": "Casa completa em condomínio",
-            "img-urls": ""
+            "img-urls": [
+                "https://cdn.pixabay.com/photo/2017/03/26/16/06/architecture-2175925__340.jpg",
+                "https://cdn.pixabay.com/photo/2017/04/13/17/48/floor-2228277__340.jpg",
+                "https://cdn.pixabay.com/photo/2016/07/26/18/30/kitchen-1543493__340.jpg"
+            ]
         },
         {
             "id": 2,
@@ -14,7 +18,11 @@
             "price": "R$ 47/noite",
             "Address": "Montes Claros/MG",
             "description": "Para hospedagem ou trabalho, wi-fi centro de MOC",
-            "img-urls": ""
+            "img-urls": [
+                "https://cdn.pixabay.com/photo/2016/10/06/17/28/architecture-1719526__340.jpg",
+                "https://cdn.pixabay.com/photo/2018/07/15/13/04/living-room-3539587_960_720.jpg",
+                "https://cdn.pixabay.com/photo/2018/09/15/18/24/historical-3680044_960_720.jpg"
+            ]
         },
         {
             "id": 3,
@@ -22,7 +30,11 @@
             "price": "R$ 70/noite",
             "Address": "Montes Claros/MG",
             "description": "Casa completa em condomínio Montes Claros/MG",
-            "img-urls": ""
+            "img-urls": [
+                "https://cdn.pixabay.com/photo/2017/07/08/02/16/house-2483336__340.jpg",
+                "https://cdn.pixabay.com/photo/2017/04/13/17/48/floor-2228277__340.jpg",
+                "https://cdn.pixabay.com/photo/2016/07/26/18/30/kitchen-1543493__340.jpg"
+            ]
         },
         {
             "id": 4,
@@ -30,7 +42,11 @@
             "price": "R$ 79/noite",
             "Address": "Montes Claros/MG",
             "description": "Hotel em Montes Claros, MG.",
-            "img-urls": ""
+            "img-urls": [
+                "https://cdn.pixabay.com/photo/2016/12/30/07/55/bedroom-1940168__340.jpg",
+                "https://cdn.pixabay.com/photo/2018/09/15/18/24/historical-3680044_960_720.jpg",
+                "https://cdn.pixabay.com/photo/2013/01/29/22/35/architecture-76671_960_720.jpg"
+            ]
         },
         {
             "id": 5,
@@ -38,7 +54,11 @@
             "price": "R$ 100/noite",
             "Address": "Vitória da Conquista/BA",
             "description": "Apartamento próximo ao Shopping Conquista Sul",
-            "img-urls": ""
+            "img-urls": [
+                "https://cdn.pixabay.com/photo/2018/07/15/13/04/living-room-3539587_960_720.jpg",
+                "https://cdn.pixabay.com/photo/2018/09/15/18/24/historical-3680044_960_720.jpg",
+                "https://media.istockphoto.com/photos/contemporary-loft-office-picture-id1208763228?b=1&k=6&m=1208763228&s=170667a&w=0&h=KgKyZhMx92sIMbsm4kC14xPSVfM55LncswD_Iu6aquM="
+            ]
         },
         {
             "id": 6,
@@ -46,7 +66,11 @@
             "price": "R$ 86/noite",
             "Address": "Vitória da Conquista/BA",
             "description": "Apartamento NOVO e bem decorado 102",
-            "img-urls": ""
+            "img-urls": [
+                "https://cdn.pixabay.com/photo/2018/02/13/11/09/home-3150500_960_720.jpg",
+                "https://cdn.pixabay.com/photo/2017/04/13/17/48/floor-2228277__340.jpg",
+                "https://cdn.pixabay.com/photo/2013/01/29/22/35/architecture-76671_960_720.jpg"
+            ]
         },
         {
             "id": 7,
@@ -54,7 +78,11 @@
             "price": "R$ 86/noite",
             "Address": "Vitória da Conquista/BA",
             "description": "Apartamento NOVO e bem decorado 102",
-            "img-urls": ""
+            "img-urls": [
+                "https://cdn.pixabay.com/photo/2018/04/30/13/33/house-3362676_960_720.jpg",
+                "https://cdn.pixabay.com/photo/2013/03/22/00/24/log-home-95677_960_720.jpg",
+                "https://cdn.pixabay.com/photo/2013/01/29/22/35/architecture-76671_960_720.jpg"
+            ]
         },
         {
             "id": 8,
@@ -62,7 +90,11 @@
             "price": "R$ 90/noite",
             "Address": "Vitória da Conquista/BA",
             "description": "Conforto e tranquilidade perto de tudo!",
-            "img-urls": ""
+            "img-urls": [
+                "https://cdn.pixabay.com/photo/2014/08/23/15/35/mansion-425272__340.jpg",
+                "https://cdn.pixabay.com/photo/2018/02/13/11/09/home-3150500_960_720.jpg",
+                "https://cdn.pixabay.com/photo/2018/04/30/13/33/house-3362676_960_720.jpg"
+            ]
         },
         {
             "id": 9,
@@ -70,7 +102,11 @@
             "price": "R$ 20/noite",
             "Address": "Janauba/MG",
             "description": "Apartamento NOVO e bem decorado 102",
-            "img-urls": ""
+            "img-urls": [
+                "https://cdn.pixabay.com/photo/2017/06/16/15/58/luxury-home-2409518__340.jpg",
+                "https://cdn.pixabay.com/photo/2017/04/13/17/48/floor-2228277__340.jpg",
+                "https://cdn.pixabay.com/photo/2016/07/26/18/30/kitchen-1543493__340.jpg"
+            ]
         },
         {
             "id": 10,
@@ -78,7 +114,11 @@
             "price": "R$ 20/noite",
             "Address": "Janauba/MG",
             "description": "Conforto e tranquilidade perto de tudo!",
-            "img-urls": ""
+            "img-urls": [
+                "https://cdn.pixabay.com/photo/2016/12/30/07/55/bedroom-1940168__340.jpg",
+                "https://media.istockphoto.com/photos/loft-room-with-sofa-picture-id1153447397?b=1&k=6&m=1153447397&s=170667a&w=0&h=wRggjQxv2NzbsktXyJSsgshjdlT13pq6sxE0BlWYJLM=",
+                "https://cdn.pixabay.com/photo/2017/03/18/13/15/curtain-side-2153959__340.jpg"
+            ]
         },
         {
             "id": 11,
@@ -86,7 +126,11 @@
             "price": "R$ 50/noite",
             "Address": "Janauba/MG",
             "description": "Bem localizado",
-            "img-urls": ""
+            "img-urls": [
+                "https://cdn.pixabay.com/photo/2015/09/30/22/50/decoration-966185__340.jpg",
+                "https://media.istockphoto.com/photos/residential-tower-blocks-picture-id1124435036?b=1&k=6&m=1124435036&s=170667a&w=0&h=0CHG4h2SdPLCbd1fr8iUwWjyEJ-a1ocDMwfx-u-3D_I=",
+                "https://cdn.pixabay.com/photo/2017/02/04/18/02/living-room-2037945__340.jpg"
+            ]
         },
         {
             "id": 12,
@@ -94,7 +138,11 @@
             "price": "R$ 250/noite",
             "Address": "Mato Verde/MG",
             "description": "Sítio Rupestre Almacalma",
-            "img-urls": ""
+            "img-urls": [
+                "https://cdn.pixabay.com/photo/2016/02/19/10/16/villa-1209148__340.jpg",
+                "https://cdn.pixabay.com/photo/2016/09/12/13/26/new-home-1664284_960_720.jpg",
+                "https://cdn.pixabay.com/photo/2018/09/15/18/24/historical-3680044_960_720.jpg"
+            ]
         },
         {
             "id": 13,
@@ -102,7 +150,11 @@
             "price": "R$ 250/noite",
             "Address": "Belo Horizonte/MG",
             "description": "Conforto e luxo!",
-            "img-urls": ""
+            "img-urls": [
+                "https://cdn.pixabay.com/photo/2017/02/04/18/02/living-room-2037945__340.jpg",
+                "https://cdn.pixabay.com/photo/2015/03/26/09/41/condominium-690086__340.jpg",
+                "https://cdn.pixabay.com/photo/2018/07/12/17/27/loft-3533980__340.jpg"
+            ]
         },
         {
             "id": 14,
@@ -110,7 +162,11 @@
             "price": "R$ 50/noite",
             "Address": "Belo Horizonte/MG",
             "description": "Banheiro individual",
-            "img-urls": ""
+            "img-urls": [
+                "https://cdn.pixabay.com/photo/2014/08/08/21/22/interior-design-413718__340.jpg",
+                "https://cdn.pixabay.com/photo/2015/03/26/09/41/condominium-690086__340.jpg",
+                "https://cdn.pixabay.com/photo/2017/02/24/12/19/apartment-2094666_960_720.jpg"
+            ]
         },
         {
             "id": 15,
@@ -118,7 +174,11 @@
             "price": "R$ 60/noite",
             "Address": "Belo Horizonte/MG",
             "description": "Banheiro individual",
-            "img-urls": ""
+            "img-urls": [
+                "https://cdn.pixabay.com/photo/2016/12/30/07/55/bedroom-1940168__340.jpg",
+                "https://cdn.pixabay.com/photo/2014/07/25/08/48/alley-401540_960_720.jpg",
+                "https://cdn.pixabay.com/photo/2017/02/24/12/19/apartment-2094666_960_720.jpg"
+            ]
         },        
         {
             "id": 16,
@@ -126,8 +186,18 @@
             "price": "R$ 500/noite",
             "Address": "Ouro Preto/MG",
             "description": "Eco turismo",
-            "img-urls": ""
+            "img-urls": [
+                "https://cdn.pixabay.com/photo/2017/06/17/12/59/luxury-home-2412145__340.jpg",
+                "https://cdn.pixabay.com/photo/2016/09/12/13/26/new-home-1664284_960_720.jpg",
+                "https://cdn.pixabay.com/photo/2013/01/29/22/35/architecture-76671_960_720.jpg"
+            ]
         }                
     ],
-    "users":[{}]
+    "users": [
+        {
+            "id": 1,
+            "email": "admin@admin.com",
+            "password": "123"
+        }
+    ]
 }
