@@ -145,23 +145,8 @@ input {
   display: block;
 }
 
-
-.heighttext {
-  font-family: "Lucida Console", Courier, monospace;
-  margin-left: 200px;
-  color: #696969;
-  border-radius: 50px;
-  height: 30px;
-  font-weight: bold;
-}
-
-footer {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-  width: 100%;
-  text-align: center;
-  background-color: #FF491B;
-  color: white;
+.container{
+  min-height: calc(80vh - 50px);
 }
 
 .grid-container {
@@ -169,53 +154,9 @@ footer {
   grid-template-columns: auto auto auto auto;
   grid-gap: 10px;
   margin: 3%;
+  padding: 10px 20px;
+  padding-bottom: 50px;
   background-color: #FFFFFF;
-}
-
-.overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  transition: .5s ease;
-  background-color: #008CBA;
-}
-
-.container:hover .overlay {
-  opacity: 1;
-}
-
-.painel {
-  alt: "Italian Trulli";
-  width: 300px;
-  height: 100;
-}
-
-.overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  transition: .5s ease;
-  background-color: #008CBA;
-}
-
-.container:hover .overlay {
-  opacity: 1;
-}
-
-.um_resultado {
-  alt: "Italian Trulli";
-  width: 500px;
-  height: 100;
 }
 
 .item{
@@ -230,6 +171,7 @@ footer {
 
 .item p{
   color: #39b54a;
+  font-size: 16px;
 }
 
 .item .card-text{
@@ -240,7 +182,6 @@ footer {
 
 .item:hover{
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .8);
-  font-size: 16px;
   color: black;
 }
 
@@ -248,7 +189,6 @@ footer {
   color: black;
   font-size: 16px;
 }
-
 
 .item img{
   width: 100%;
@@ -277,6 +217,14 @@ footer {
   margin: 0px 20px;
   background-color: #FF491B;
   color: #ffffff;
+}
+
+footer {
+  height: 50px;
+  width: 100%;
+  text-align: center;
+  background-color: #FF491B;
+  color: white;
 }
 
 

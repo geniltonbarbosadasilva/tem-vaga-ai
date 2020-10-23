@@ -36,7 +36,7 @@ function buildPage(data){
         card.appendChild(desc);
         item.appendChild(card);
         item.addEventListener("click", redirect);
-        document.getElementById("Content-grid").appendChild(item);
+        document.getElementById("content-grid").appendChild(item);        
     }
 }
 
@@ -45,7 +45,7 @@ function buildOnePage(data){
 }
 
 function loadContent() {
-    if (document.getElementById("Content-grid")!=undefined) {
+    if (document.getElementById("content-grid")!=undefined) {
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
