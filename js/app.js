@@ -14,7 +14,6 @@ window.onload = function () { loadContent() }
 
 function buildPage(data){
     for (key in data) {
-        console.log(data[key]);
         let item = document.createElement("div");
         let card = document.createElement("div");
         let img = document.createElement("img");
