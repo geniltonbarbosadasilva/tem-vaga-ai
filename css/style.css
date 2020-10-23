@@ -228,16 +228,32 @@ footer {
   transition: 0.5s;
 }
 
+.item p{
+  color: #39b54a;
+}
+
+.item .card-text{
+  color: #FFFFFF;
+  font-size: 1px;
+  transition: 0.5s;
+}
+
 .item:hover{
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .8);
   color: black;
 }
 
+.item:hover .card-text{
+  color: black;
+  font-size: 16px;
+}
+
+
 .item img{
   width: 100%;
 }
 
-.box{
+.card{
   margin: 5%;
 }
 
