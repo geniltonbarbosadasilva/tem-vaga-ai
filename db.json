@@ -4,7 +4,7 @@
             "id": 1,
             "title": "Loft inteiro",
             "price": "R$ 110/noite",
-            "Address": "Montes Claros/MG",
+            "address": "Montes Claros/MG",
             "description": "Casa completa em condomínio",
             "img_urls": [
                 "https://cdn.pixabay.com/photo/2017/03/26/16/06/architecture-2175925__340.jpg",
@@ -16,7 +16,7 @@
             "id": 2,
             "title": "Apartamento Inteiro",
             "price": "R$ 47/noite",
-            "Address": "Montes Claros/MG",
+            "address": "Montes Claros/MG",
             "description": "Para hospedagem ou trabalho, wi-fi centro de MOC",
             "img_urls": [
                 "https://cdn.pixabay.com/photo/2016/10/06/17/28/architecture-1719526__340.jpg",
@@ -28,7 +28,7 @@
             "id": 3,
             "title": "Casa inteira",
             "price": "R$ 70/noite",
-            "Address": "Montes Claros/MG",
+            "address": "Montes Claros/MG",
             "description": "Casa completa em condomínio Montes Claros/MG",
             "img_urls": [
                 "https://cdn.pixabay.com/photo/2017/07/08/02/16/house-2483336__340.jpg",
@@ -40,7 +40,7 @@
             "id": 4,
             "title": "Quarto inteira",
             "price": "R$ 79/noite",
-            "Address": "Montes Claros/MG",
+            "address": "Montes Claros/MG",
             "description": "Hotel em Montes Claros, MG.",
             "img_urls": [
                 "https://cdn.pixabay.com/photo/2016/12/30/07/55/bedroom-1940168__340.jpg",
@@ -52,7 +52,7 @@
             "id": 5,
             "title": "Apartamento inteiro",
             "price": "R$ 100/noite",
-            "Address": "Vitória da Conquista/BA",
+            "address": "Vitória da Conquista/BA",
             "description": "Apartamento próximo ao Shopping Conquista Sul",
             "img_urls": [
                 "https://cdn.pixabay.com/photo/2018/07/15/13/04/living-room-3539587_960_720.jpg",
@@ -64,7 +64,7 @@
             "id": 6,
             "title": "Condomínio inteiro",
             "price": "R$ 86/noite",
-            "Address": "Vitória da Conquista/BA",
+            "address": "Vitória da Conquista/BA",
             "description": "Apartamento NOVO e bem decorado 102",
             "img_urls": [
                 "https://cdn.pixabay.com/photo/2018/02/13/11/09/home-3150500_960_720.jpg",
@@ -76,7 +76,7 @@
             "id": 7,
             "title": "Condomínio inteiro",
             "price": "R$ 86/noite",
-            "Address": "Vitória da Conquista/BA",
+            "address": "Vitória da Conquista/BA",
             "description": "Apartamento NOVO e bem decorado 102",
             "img_urls": [
                 "https://cdn.pixabay.com/photo/2018/04/30/13/33/house-3362676_960_720.jpg",
@@ -88,7 +88,7 @@
             "id": 8,
             "title": "Condomínio inteiro",
             "price": "R$ 90/noite",
-            "Address": "Vitória da Conquista/BA",
+            "address": "Vitória da Conquista/BA",
             "description": "Conforto e tranquilidade perto de tudo!",
             "img_urls": [
                 "https://cdn.pixabay.com/photo/2014/08/23/15/35/mansion-425272__340.jpg",
@@ -100,7 +100,7 @@
             "id": 9,
             "title": "Casa inteiro",
             "price": "R$ 20/noite",
-            "Address": "Janauba/MG",
+            "address": "Janauba/MG",
             "description": "Apartamento NOVO e bem decorado 102",
             "img_urls": [
                 "https://cdn.pixabay.com/photo/2017/06/16/15/58/luxury-home-2409518__340.jpg",
@@ -112,7 +112,7 @@
             "id": 10,
             "title": "Quarto inteiro",
             "price": "R$ 20/noite",
-            "Address": "Janauba/MG",
+            "address": "Janauba/MG",
             "description": "Conforto e tranquilidade perto de tudo!",
             "img_urls": [
                 "https://cdn.pixabay.com/photo/2016/12/30/07/55/bedroom-1940168__340.jpg",
@@ -124,7 +124,7 @@
             "id": 11,
             "title": "Apartamento inteiro",
             "price": "R$ 50/noite",
-            "Address": "Janauba/MG",
+            "address": "Janauba/MG",
             "description": "Bem localizado",
             "img_urls": [
                 "https://cdn.pixabay.com/photo/2015/09/30/22/50/decoration-966185__340.jpg",
@@ -136,7 +136,7 @@
             "id": 12,
             "title": "Sítio inteiro",
             "price": "R$ 250/noite",
-            "Address": "Mato Verde/MG",
+            "address": "Mato Verde/MG",
             "description": "Sítio Rupestre Almacalma",
             "img_urls": [
                 "https://cdn.pixabay.com/photo/2016/02/19/10/16/villa-1209148__340.jpg",
@@ -148,7 +148,7 @@
             "id": 13,
             "title": "Loft inteiro",
             "price": "R$ 250/noite",
-            "Address": "Belo Horizonte/MG",
+            "address": "Belo Horizonte/MG",
             "description": "Conforto e luxo!",
             "img_urls": [
                 "https://cdn.pixabay.com/photo/2017/02/04/18/02/living-room-2037945__340.jpg",
@@ -160,7 +160,7 @@
             "id": 14,
             "title": "Loft Compartilhado",
             "price": "R$ 50/noite",
-            "Address": "Belo Horizonte/MG",
+            "address": "Belo Horizonte/MG",
             "description": "Banheiro individual",
             "img_urls": [
                 "https://cdn.pixabay.com/photo/2014/08/08/21/22/interior-design-413718__340.jpg",
@@ -172,7 +172,7 @@
             "id": 15,
             "title": "Suite inteiro",
             "price": "R$ 60/noite",
-            "Address": "Belo Horizonte/MG",
+            "address": "Belo Horizonte/MG",
             "description": "Banheiro individual",
             "img_urls": [
                 "https://cdn.pixabay.com/photo/2016/12/30/07/55/bedroom-1940168__340.jpg",
@@ -184,7 +184,7 @@
             "id": 16,
             "title": "Fazenda inteiro",
             "price": "R$ 500/noite",
-            "Address": "Ouro Preto/MG",
+            "address": "Ouro Preto/MG",
             "description": "Eco turismo",
             "img_urls": [
                 "https://cdn.pixabay.com/photo/2017/06/17/12/59/luxury-home-2412145__340.jpg",

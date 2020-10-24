@@ -58,7 +58,7 @@ function loadContent() {
 }
 
 function redirect() {
-    window.open().location = "one-result.html?" + this.id;    
+    window.location.href = "one-result.html?" + this.id;    
 }
 
 function login() {
@@ -68,9 +68,30 @@ function login() {
 }
 
 function openLink(link){
-    window.open(link);
+    window.location.href = link;
 }
 
-function oneResultLoader() {
-    
+function buildOneResult(data){
+    document.getElementById("title").appendChild(document.createTextNode(data.title));
+    document.getElementById("price").appendChild(document.createTextNode(data.price));
+    document.getElementById("desc").appendChild(document.createTextNode(data.description));
+    document.getElementById("address").appendChild(document.createTextNode(data.address));
+
+    document.getElementById("slide-1").setAttribute("src", data.img_urls[0]);
+    document.getElementById("slide-2").setAttribute("src", data.img_urls[1]);
+    document.getElementById("slide-3").setAttribute("src", data.img_urls[2]);
+}
+
+function oneResultLoader(path) {
+    if (path != undefined) {
+        let id = path.replace("?", "");
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                buildOneResult(JSON.parse(this.responseText));
+            }
+        };
+        xhttp.open("GET", `https://my-json-server.typicode.com/genilton2528/fakeapi/imoveis/${id}`, true);
+        xhttp.send();
+    }
 }
