@@ -34,3 +34,10 @@ function dotsUpdate() {
     }    
     dots[slideIndex].className += " w3-white";
 }
+
+function currentDiv(idex) {
+    slideIndex = idex;
+    retreat = idex * -100;
+    document.getElementById("slide-1").style.marginLeft = `${retreat}%`;
+    dotsUpdate();
+}

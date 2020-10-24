@@ -58,7 +58,7 @@ function loadContent() {
 }
 
 function redirect() {
-    window.opener.location = "one-result.html" + this.id;    
+    window.open().location = "one-result.html?" + this.id;    
 }
 
 function login() {
@@ -69,4 +69,8 @@ function login() {
 
 function openLink(link){
     window.open(link);
+}
+
+function oneResultLoader() {
+    
 }

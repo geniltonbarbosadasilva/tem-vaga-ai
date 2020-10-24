@@ -2,67 +2,93 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="utf-8">
-    <title>Tem Vaga ai</title>
-    <link rel="shortcut icon" href="../img/ico.png">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@600&display=swap" rel="stylesheet">
-    <link href="https://getbootstrap.com/docs/4.5/examples/album/album.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" type="text/css" href="../css/slider.css">
-    <link rel="stylesheet" type="text/css" href="../css/style.css">
-    <script src="../js/animation.js"></script>
-    <script src="../js/app.js"></script>
+  <meta charset="utf-8">
+  <title>Tem Vaga ai</title>
+  <link rel="shortcut icon" href="../img/ico.png">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@600&display=swap" rel="stylesheet">
+  <link href="https://getbootstrap.com/docs/4.5/examples/album/album.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" type="text/css" href="../css/slider.css">
+  <link rel="stylesheet" type="text/css" href="../css/style.css">
+  <script src="../js/animation.js"></script>
+  <script src="../js/app.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 
 <body>
-    <header>
-        <div class="navbar">
-            <div class="logo" id="logo">
-                <a href="home.html"><img src="../img/logo.png" alt="logo"></a>
-            </div>
+  <header>
+    <div class="navbar">
+      <div class="logo" id="logo">
+        <a href="home.html"><img src="../img/logo.png" alt="logo"></a>
+      </div>
 
-            <form autocomplete="off" class="form-home">
-                <div class="dropdown">
-                    <input id="search-id" type="text" id="fname" name="fname" placeholder="Para onde?">
-                    <div class="dropdown-content">
-                        <a onclick="fillField(this)">Belo Horizonte</a>
-                        <a onclick="fillField(this)">Montes Claros</a>
-                        <a onclick="fillField(this)">Ouro Preto</a>
-                        <a onclick="fillField(this)">Vitoria da Conquista</a>
-                    </div>
-                </div>
-                <input id="search-id" type="number" id="fname" name="fname" placeholder="quantas pessoas?">
-                <input id="search-id" type="date" id="fname" name="fname" placeholder="quando?">
+      <form autocomplete="off" class="form-home">
+        <div class="dropdown">
+          <input id="search-id" type="text" id="fname" name="fname" placeholder="Para onde?">
+          <div class="dropdown-content">
+            <a onclick="fillField(this)">Belo Horizonte</a>
+            <a onclick="fillField(this)">Montes Claros</a>
+            <a onclick="fillField(this)">Ouro Preto</a>
+            <a onclick="fillField(this)">Vitoria da Conquista</a>
+          </div>
+        </div>
+        <input id="search-id" type="number" id="fname" name="fname" placeholder="quantas pessoas?">
+        <input id="search-id" type="date" id="fname" name="fname" placeholder="quando?">
 
-                <button type="submit" class="search-btn"><a href="result.html">Buscar</a></button>
+        <button onclick="openLink('result.html')" type="button" class="search-btn">Buscar</button>
+      </form>
+
+      <div class="menu">
+        <ul>
+          <li><a onclick="document.getElementById('id01').style.display='block'">Entre</a></li>
+          <li><a href="">Seja um anfitrião</a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- TELA DE LOGIN -->
+    <div id="id01" class="w3-modal">
+      <div class="w3-modal-content">
+        <div class="w3-container">
+          <div id="login" class="login">
+            <form autocomplete="off">
+              <img src="../img/user.png">
+              <input id="search-id" type="text" name="email" placeholder="Email">
+              <input id="search-id" type="password" name="password" placeholder="Password">
+              <input id="checkbox" type="checkbox" name="conected" checked>
+              <label for="checkbox">Mantanha-me Conectado</label>
+              <button onclick="document.getElementById('id01').style.display='none'" class="search-btn"
+                type="button">Entrar</button>
             </form>
-
-            <div class="menu">
-                <ul>
-                    <li><a onclick="document.getElementById('id01').style.display='block'">Entre</a></li>
-                    <li><a href="">Seja um anfitrião</a></li>
-                </ul>
-            </div>
+          </div>
         </div>
-        <!-- TELA DE LOGIN -->
-        <div id="id01" class="w3-modal">
-            <div class="w3-modal-content">
-                <div class="w3-container">
-                    <div id="login" class="login">
-                        <form autocomplete="off">
-                            <img src="../img/user.png">
-                            <input id="search-id" type="text" name="email" placeholder="Email">
-                            <input id="search-id" type="password" name="password" placeholder="Password">
-                            <input id="checkbox" type="checkbox" name="conected" checked><label for="checkbox">Mantanha-me Conectado</label>                            
-                            <button onclick="document.getElementById('id01').style.display='none'" type="button" class="search-btn">Entrar</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+      </div>
+    </div>
+  </header>
 
-  <div id="content-view" class="container">
+  <div class="container">
+    <div class="content-view">
+      <div id="slider" class="slide-container">
+        <img id="slide-1" class="mySlides" src="../img/img-1.jpg">
+        <img id="slide-2" class="mySlides" src="../img/img-2.jpg">
+        <img id="slide-3" class="mySlides" src="../img/img-3.jpg">
+        <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle"
+          style="width:100%">
+          <div class="w3-left w3-hover-text-khaki" onclick="left()">&#10094;</div>
+          <div class="w3-right w3-hover-text-khaki" onclick="right()">&#10095;</div>
+          <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(0)"></span>
+          <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
+          <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
+        </div>
+      </div>
+
+      <div class="item-view">
+        <h1>Teste</h1>
+        <p class="price">Preço</p>
+        <p class="text">Descrição</p>
+        <p class="text">Endereço</p>
+        <button class="search-btn" type="button">Fechar Negócio!</button>        
+      </div>
+    </div>
   </div>
 
   <footer>
@@ -92,6 +118,19 @@
       </li>
     </ul>
   </footer>
+  <script src="../js/slide.js"></script>
+  <script>
+    // Remove espaços Brancos
+    function clearBlankSpace(id) {
+      let element = $(id);
+      let children = element.children();
+      children.detach();
+      element.empty();
+      element.append(children);
+    }
+    clearBlankSpace("#slider");
+    oneResultLoader();
+  </script>
 </body>
 
 </html>

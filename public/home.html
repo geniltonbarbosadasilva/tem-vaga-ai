@@ -56,8 +56,8 @@
                             <input id="search-id" type="password" name="password" placeholder="Password">
                             <input id="checkbox" type="checkbox" name="conected" checked>
                             <label for="checkbox">Mantanha-me Conectado</label>
-                            <button onclick="document.getElementById('id01').style.display='none'"
-                                class="search-btn" type="button">Entrar</button>
+                            <button onclick="document.getElementById('id01').style.display='none'" class="search-btn"
+                                type="button">Entrar</button>
                         </form>
                     </div>
                 </div>
@@ -73,9 +73,9 @@
             style="width:100%">
             <div class="w3-left w3-hover-text-khaki" onclick="left()">&#10094;</div>
             <div class="w3-right w3-hover-text-khaki" onclick="right()">&#10095;</div>
+            <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(0)"></span>
             <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
             <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
-            <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
         </div>
     </div>
 
@@ -141,7 +141,7 @@
         // Remove espaços Brancos
         function clearBlankSpace(id) {
             let element = $(id);
-            let children = element.children();            
+            let children = element.children();
             children.detach();
             element.empty();
             element.append(children);

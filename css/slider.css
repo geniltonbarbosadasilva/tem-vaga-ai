@@ -1,10 +1,12 @@
 .w3-left, .w3-right, .w3-badge {
-    cursor: pointer
+    cursor: pointer;
+    font-size: 50px;
 }
 
 .w3-badge {
-    height: 13px;
-    width: 13px;
+    margin-top: 50px;
+    height: 20px;
+    width: 20px;
     padding: 0
 }
 

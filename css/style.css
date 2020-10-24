@@ -330,6 +330,56 @@ footer ul li svg:hover{
   width: 500px;
 }
 
+.content-view{
+  margin: 2%;
+  display: grid;
+  grid-template-columns: 50% auto;
+  grid-gap: 10px;
+}
+
+.content-view .item-view{
+  margin: 5%;
+  background-color: #ffffff;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .4);
+  border: none;
+  color: #282828;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.content-view .item-view p{
+  color: #282828;
+  margin: 2% 3%;
+}
+
+.content-view .item-view button{
+  margin: 10px 20px;
+  background-color: #FF491B;
+  display: block;
+  color: #ffffff;
+  transition: 0.5s;
+}
+
+.content-view .item-view button:hover{
+  background-color: #f8b732;
+}
+
+.content-view .item-view .price{
+  color: #39b54a;
+}
+
+.content-view .slider{
+  margin: 5%;
+  background-color: #ffffff;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .4);
+  border: none;
+  border-radius: 5px;  
+}
+
+.content-view img{
+  max-height: 350px;
+}
+
 @media only screen and (max-width: 900px) {
   .menu ul li:nth-child(n) a {
     border-radius: 30px 30px 30px 30px;
