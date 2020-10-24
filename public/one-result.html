@@ -2,50 +2,67 @@
 <html lang="pt-br">
 
 <head>
-  <meta charset="utf-8">
-  <title>Tem Vaga ai</title>
-  <link rel="shortcut icon" href="../img/ico.png">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@600&display=swap" rel="stylesheet">
-  <link href="https://getbootstrap.com/docs/4.5/examples/album/album.css" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="../css/slider.css">
-  <link rel="stylesheet" type="text/css" href="../css/style.css">
-  <script src="../js/animation.js"></script>
-  <script src="../js/app.js"></script>
+    <meta charset="utf-8">
+    <title>Tem Vaga ai</title>
+    <link rel="shortcut icon" href="../img/ico.png">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@600&display=swap" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/4.5/examples/album/album.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" type="text/css" href="../css/slider.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <script src="../js/animation.js"></script>
+    <script src="../js/app.js"></script>
 </head>
 
 <body>
-  <header>
-    <div class="navbar">
-      <div class="logo" id="logo">
-        <a href="home.html"><img src="../img/logo.png" alt="logo"></a>
-      </div>
+    <header>
+        <div class="navbar">
+            <div class="logo" id="logo">
+                <a href="home.html"><img src="../img/logo.png" alt="logo"></a>
+            </div>
 
-      <form autocomplete="off" class="form-home">
-        <div class="dropdown">
-          <input id="search-id" type="text" id="fname" name="fname" placeholder="Para onde?">
-          <div class="dropdown-content">
-            <a onclick="fillField(this)">Belo Horizonte</a>
-            <a onclick="fillField(this)">Montes Claros</a>
-            <a onclick="fillField(this)">Ouro Preto</a>
-            <a onclick="fillField(this)">Vitoria da Conquista</a>
-          </div>
+            <form autocomplete="off" class="form-home">
+                <div class="dropdown">
+                    <input id="search-id" type="text" id="fname" name="fname" placeholder="Para onde?">
+                    <div class="dropdown-content">
+                        <a onclick="fillField(this)">Belo Horizonte</a>
+                        <a onclick="fillField(this)">Montes Claros</a>
+                        <a onclick="fillField(this)">Ouro Preto</a>
+                        <a onclick="fillField(this)">Vitoria da Conquista</a>
+                    </div>
+                </div>
+                <input id="search-id" type="number" id="fname" name="fname" placeholder="quantas pessoas?">
+                <input id="search-id" type="date" id="fname" name="fname" placeholder="quando?">
+
+                <button type="submit" class="search-btn"><a href="result.html">Buscar</a></button>
+            </form>
+
+            <div class="menu">
+                <ul>
+                    <li><a onclick="document.getElementById('id01').style.display='block'">Entre</a></li>
+                    <li><a href="">Seja um anfitrião</a></li>
+                </ul>
+            </div>
         </div>
-        <input id="search-id" type="number" id="fname" name="fname" placeholder="quantas pessoas?">
-        <input id="search-id" type="date" id="fname" name="fname" placeholder="quando?">
+        <!-- TELA DE LOGIN -->
+        <div id="id01" class="w3-modal">
+            <div class="w3-modal-content">
+                <div class="w3-container">
+                    <div id="login" class="login">
+                        <form autocomplete="off">
+                            <img src="../img/user.png">
+                            <input id="search-id" type="text" name="email" placeholder="Email">
+                            <input id="search-id" type="password" name="password" placeholder="Password">
+                            <input id="checkbox" type="checkbox" name="conected" checked><label for="checkbox">Mantanha-me Conectado</label>                            
+                            <button onclick="document.getElementById('id01').style.display='none'" type="button" class="search-btn">Entrar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 
-        <button type="submit" class="search-btn"><a href="result.html">Buscar</a></button>
-      </form>
-
-      <div class="menu">
-        <ul>
-          <li><a href="login.html">Entre</a></li>
-          <li><a href="">Seja um anfitrião</a></li>
-        </ul>
-      </div>
-    </div>
-  </header>
-
-  <div class="container">
+  <div id="content-view" class="container">
   </div>
 
   <footer>

@@ -252,23 +252,39 @@ input {
 }
 
 .login{
-  margin: 10% 30%;
+  margin: 0px;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .8);
   background-color: #FFFFFF;
 }
 
 .login form{
-  margin: 30px;  
+  margin: 20px;  
+  padding: 10px;
+}
+
+.login form img{  
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
 }
 
 .login form input{
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .8);
+  width: 80%;
+  display: block;
   margin: 20px;
+}
+
+.login #checkbox{
+  width: auto;
+  height: auto;
+  display: inline;
 }
 
 .login button{
   margin: 0px 20px;
   background-color: #FF491B;
+  display: block;
   color: #ffffff;
 }
 
@@ -308,6 +324,10 @@ footer ul li svg:hover{
   width: 18px; 
   display: block; 
   fill: #f8b732;
+}
+
+.w3-modal-content {
+  width: 500px;
 }
 
 @media only screen and (max-width: 900px) {
