@@ -30,9 +30,9 @@ function left() {
 function dotsUpdate() {
     var dots = document.getElementsByClassName("demo");    
     for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" w3-white", "");
+        dots[i].className = dots[i].className.replace(" slide-white", "");
     }    
-    dots[slideIndex].className += " w3-white";
+    dots[slideIndex].className += " slide-white";
 }
 
 function currentDiv(idex) {

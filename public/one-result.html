@@ -7,7 +7,6 @@
   <link rel="shortcut icon" href="../img/ico.png">
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@600&display=swap" rel="stylesheet">
   <link href="https://getbootstrap.com/docs/4.5/examples/album/album.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" type="text/css" href="../css/slider.css">
   <link rel="stylesheet" type="text/css" href="../css/style.css">
   <script src="../js/animation.js"></script>
@@ -19,12 +18,12 @@
   <header>
     <div class="navbar">
       <div class="logo" id="logo">
-        <a href="home.html"><img src="../img/logo.png" alt="logo"></a>
+        <a href="index.html"><img src="../img/logo.png" alt="logo"></a>
       </div>
 
       <form autocomplete="off" class="form-home">
         <div class="dropdown">
-          <input id="search-id" type="text" id="fname" name="fname" placeholder="Para onde?">
+          <input id="search-local" type="text" id="fname" name="fname" placeholder="Para onde?">
           <div class="dropdown-content">
             <a onclick="fillField(this)">Belo Horizonte</a>
             <a onclick="fillField(this)">Montes Claros</a>
@@ -46,9 +45,9 @@
       </div>
     </div>
     <!-- TELA DE LOGIN -->
-    <div id="id01" class="w3-modal">
-      <div class="w3-modal-content">
-        <div class="w3-container">
+    <div id="id01" class="modal">
+      <div class="modal-content">
+        <div class="modal-container">
           <div id="login" class="login">
             <form autocomplete="off">
               <img src="../img/user.png">
@@ -67,17 +66,20 @@
 
   <div class="container">
     <div class="content-view">
-      <div id="slider" class="slide-container">
+      <div id="slider" class="slider-container">
         <img id="slide-1" class="mySlides" src="">
         <img id="slide-2" class="mySlides" src="">
         <img id="slide-3" class="mySlides" src="">
-        <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle"
+        <div class="slide-center slide-container slide-section slide-large slide-text-white slide-display-bottommiddle"
           style="width:100%">
-          <div class="w3-left w3-hover-text-khaki" onclick="left()">&#10094;</div>
-          <div class="w3-right w3-hover-text-khaki" onclick="right()">&#10095;</div>
-          <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(0)"></span>
-          <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
-          <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
+          <div class="slide-left slide-hover-text-khaki" onclick="left()">&#10094;</div>
+          <div class="slide-right slide-hover-text-khaki" onclick="right()">&#10095;</div>
+          <span class="slide-badge demo slide-border slide-transparent slide-hover-white"
+            onclick="currentDiv(0)"></span>
+          <span class="slide-badge demo slide-border slide-transparent slide-hover-white"
+            onclick="currentDiv(1)"></span>
+          <span class="slide-badge demo slide-border slide-transparent slide-hover-white"
+            onclick="currentDiv(2)"></span>
         </div>
       </div>
 
@@ -86,8 +88,9 @@
         <p id="price" class="price"></p>
         <p id="desc" class="text"></p>
         <p id="address" class="text"></p>
-        <button class="search-btn" type="button">Fechar Negócio!</button>        
+        <button class="search-btn" type="button">Fechar Negócio!</button>
       </div>
+
     </div>
   </div>
 

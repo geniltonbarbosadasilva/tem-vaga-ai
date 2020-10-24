@@ -1,9 +1,71 @@
-.w3-left, .w3-right, .w3-badge {
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+.slide-display-bottommiddle {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%,0%);
+    -ms-transform: translate(-50%,0%);
+}
+
+.slide-container, .slide-panel {
+    padding: 0.01em 16px;
+}
+
+.slide-text-white, .slide-hover-text-white:hover {
+    color: #fff!important;
+}
+
+.slide-section, .slide-code {
+    margin-top: 16px!important;
+    margin-bottom: 16px!important;
+}
+
+.slide-large {
+    font-size: 18px!important;
+}
+
+.slide-center {
+    text-align: center!important;
+}
+
+.slide-left {
+    float: left!important;
+}
+
+.slide-right {
+    float: right!important;
+}
+
+.slide-text-khaki, .slide-hover-text-khaki:hover {
+    color: #f8b732!important;
+}
+
+.slide-white, .slide-hover-white:hover {
+    color: #000!important;
+    background-color: #fff!important;
+}
+
+.slide-border {
+    border: 1px solid #ccc!important;
+}
+
+.slide-badge {
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+}
+
+/* Pre-Definiçoes */
+
+.slide-left, .slide-right, .slide-badge {
     cursor: pointer;
     font-size: 50px;
 }
 
-.w3-badge {
+.slide-badge {
     margin-top: 50px;
     height: 20px;
     width: 20px;
@@ -16,7 +78,7 @@
     vertical-align: top;
 }
 
-.slide-container {
+.slider-container {
     position: relative;    
     max-width: none;
     max-height: 500px;

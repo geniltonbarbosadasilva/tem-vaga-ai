@@ -7,7 +7,7 @@ body {
 header {
   z-index: 100;
   width: 100%;
-  background: #FF491B;
+  background: #4cb5a8;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
@@ -16,6 +16,13 @@ header {
 h1{
   margin: 3% 0% 0% 3%;
   color: #383838;
+}
+
+h5{
+  color: #FFFFFF;
+  font-family: inherit;
+  font-size: 18px;
+  font-style: bold;
 }
 
 a {
@@ -81,8 +88,45 @@ a {
   text-decoration: none;
 }
 
+.modal {
+  z-index: 3;
+  display: none;
+  padding-top: 100px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4)
+}
+
+.modal-content {
+  margin: auto;
+  background-color: #fff;
+  position: relative;
+  padding: 0;
+  outline: 0;
+  width: 600px
+}
+
+.modal-container:after, .modal-container:before{
+  content: "";
+  display: table;
+  clear: both
+}
+
 .form-home{
+  margin-top: 0;
   text-align:center;
+  border-radius: 5px;
+  background-color: #4cb5a8;
+}
+
+.form-home h2{
+  color: #FFFFFF;  
+  margin-top: 0;
 }
 
 input {
@@ -99,11 +143,38 @@ input {
   outline: none;
 }
 
-.search-btn{
+.info h5{
+  display: inline;
+  vertical-align: center;
+}
+
+.button{  
+  display: inline;
   transition: background-color 2s;
   transition-timing-function: ease;
+  background-color: #f8b732;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 5px;
+  font-family: inherit;
+  padding: 6px;
+  margin: 15px 10px;
+  font-size: 16px;
+  height: 42px;
+  outline: none;
+}
+
+.button:hover {
   background-color: #FFFFFF;
   color: #f8b732;
+}
+
+
+.search-btn{
+  transition: background-color 0.5s;
+  transition-timing-function: ease;
+  background-color: #f8b732;
+  color: #FFFFFF;
   border: none;
   border-radius: 5px;
   font-family: inherit;
@@ -115,8 +186,8 @@ input {
 }
 
 .search-btn:hover{
-  background-color: #f8b732;
-  color: #FFFFFF;
+  background-color: #ffffff;
+  color: #f8b732;
 }
 
 .search-btn:hover a{
@@ -194,6 +265,9 @@ input {
   color: #484848;
 }
 
+.item h2{
+  text-align: center;
+}
 
 .item .card-text{
   color: #FFFFFF;
@@ -252,7 +326,7 @@ input {
 }
 
 .login{
-  margin: 0px;
+  margin: 0px 10px;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .8);
   background-color: #FFFFFF;
 }
@@ -283,8 +357,13 @@ input {
 
 .login button{
   margin: 0px 20px;
-  background-color: #FF491B;
+  background-color: #4cb5a8;
   display: block;
+  color: #ffffff;
+}
+
+.login button:hover{
+  background-color: #f8b732;
   color: #ffffff;
 }
 
@@ -293,7 +372,7 @@ footer {
   padding-bottom: 2rem;
   width: 100%;
   text-align: center;
-  background-color: #FF491B;
+  background-color: #4cb5a8;
   color: white;
 }
 
@@ -354,7 +433,7 @@ footer ul li svg:hover{
 
 .content-view .item-view button{
   margin: 10px 20px;
-  background-color: #FF491B;
+  background-color: #4cb5a8;
   display: block;
   color: #ffffff;
   transition: 0.5s;

@@ -7,7 +7,6 @@
     <link rel="shortcut icon" href="../img/ico.png">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@600&display=swap" rel="stylesheet">
     <link href="https://getbootstrap.com/docs/4.5/examples/album/album.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" type="text/css" href="../css/slider.css">
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <script src="../js/animation.js"></script>
@@ -19,36 +18,23 @@
     <header>
         <div class="navbar">
             <div class="logo" id="logo">
-                <a href="home.html"><img src="../img/logo.png" alt="logo"></a>
+                <a href="index.html"><img src="../img/logo.png" alt="logo"></a>
             </div>
-
-            <form autocomplete="off" class="form-home">
-                <div class="dropdown">
-                    <input id="search-id" type="text" id="fname" name="fname" placeholder="Para onde?">
-                    <div class="dropdown-content">
-                        <a onclick="fillField(this)">Belo Horizonte</a>
-                        <a onclick="fillField(this)">Montes Claros</a>
-                        <a onclick="fillField(this)">Ouro Preto</a>
-                        <a onclick="fillField(this)">Vitoria da Conquista</a>
-                    </div>
-                </div>
-                <input id="search-id" type="number" id="fname" name="fname" placeholder="quantas pessoas?">
-                <input id="search-id" type="date" id="fname" name="fname" placeholder="quando?">
-
-                <button onclick="openLink('result.html')" type="button" class="search-btn">Buscar</button>
-            </form>
-
+            <div class="info">
+                <h5> Confira nossas politicas sobre o COVID-19</h5>
+                <button class="button" type="button" onclick="funcao1()">Leia aqui</button>
+            </div>
             <div class="menu">
                 <ul>
-                    <li><a onclick="document.getElementById('id01').style.display='block'">Entre</a></li>
-                    <li><a href="">Seja um anfitrião</a></li>
+                    <li><a href="#" onclick="document.getElementById('id01').style.display='block'">Entre</a></li>
+                    <li><a href="#">Seja um anfitrião</a></li>
                 </ul>
             </div>
         </div>
         <!-- TELA DE LOGIN -->
-        <div id="id01" class="w3-modal">
-            <div class="w3-modal-content">
-                <div class="w3-container">
+        <div id="id01" class="modal">
+            <div class="modal-content">
+                <div class="modal-container">
                     <div id="login" class="login">
                         <form autocomplete="off">
                             <img src="../img/user.png">
@@ -65,18 +51,44 @@
         </div>
     </header>
 
-    <div id="slider" class="slide-container">
+    <div id="slider" class="slider-container">
         <img id="slide-1" class="mySlides" src="../img/img-1.jpg">
         <img id="slide-2" class="mySlides" src="../img/img-2.jpg">
         <img id="slide-3" class="mySlides" src="../img/img-3.jpg">
-        <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle"
+        <div class="slide-center slide-container slide-section slide-large slide-text-white slide-display-bottommiddle"
             style="width:100%">
-            <div class="w3-left w3-hover-text-khaki" onclick="left()">&#10094;</div>
-            <div class="w3-right w3-hover-text-khaki" onclick="right()">&#10095;</div>
-            <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(0)"></span>
-            <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
-            <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
+            <div class="slide-left slide-hover-text-khaki" onclick="left()">&#10094;</div>
+            <div class="slide-right slide-hover-text-khaki" onclick="right()">&#10095;</div>
+            <span class="slide-badge demo slide-border slide-transparent slide-hover-white" onclick="currentDiv(0)"></span>
+            <span class="slide-badge demo slide-border slide-transparent slide-hover-white" onclick="currentDiv(1)"></span>
+            <span class="slide-badge demo slide-border slide-transparent slide-hover-white" onclick="currentDiv(2)"></span>
         </div>
+    </div>
+
+    <div class="grid-container">
+        <h3>Acomode-se em um lugar novo. Descubra lugares perto de você para morar, trabalhar ou simplesmente relaxar.
+        </h3>
+
+        <div class="item">
+            <form autocomplete="off" class="form-home" action="result.html">
+                <h2>Para onde vamos hoje?</h2>
+                <div class="dropdown">
+                    <input id="search-local" type="text" id="fname" name="fname" placeholder="Para onde?">
+                    <div class="dropdown-content">
+                        <a onclick="fillField(this)">Belo Horizonte</a>
+                        <a onclick="fillField(this)">Montes Claros</a>
+                        <a onclick="fillField(this)">Ouro Preto</a>
+                        <a onclick="fillField(this)">Vitoria da Conquista</a>
+                    </div>
+                </div>
+                <input id="search-id" type="number" id="fname" name="fname" placeholder="quantas pessoas?">
+                <input id="search-id" type="date" id="fname" name="fname" placeholder="quando?">
+
+                <button type="submit" class="search-btn">Buscar</button>
+
+            </form>
+        </div>
+
     </div>
 
     <div class="container">
@@ -138,6 +150,10 @@
     </footer>
     <script src="../js/slide.js"></script>
     <script>
+        function funcao1() {
+            alert("Devido ao COVID19 verifique se o local da sua viagem esta em zona crítica de risco antes de viajar. Caso precise cancelar sua reserva, estamos com taxa 0 durante a pandemia");
+        }
+
         // Remove espaços Brancos
         function clearBlankSpace(id) {
             let element = $(id);

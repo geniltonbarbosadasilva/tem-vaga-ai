@@ -9,5 +9,5 @@ function scrollFunction() {
 }
 
 function fillField(elem) {
-  document.getElementById('search-id').value = elem.text;
+  document.getElementById('search-local').value = elem.text;
 }

@@ -58,20 +58,20 @@ function loadContent() {
 }
 
 function redirect() {
-    window.location.href = "one-result.html?" + this.id;    
+    window.location.href = "one-result.html?" + this.id;
 }
 
 function login() {
-    setTimeout(function () { 
+    setTimeout(function () {
         console.log("Login");
     }, 2000);
 }
 
-function openLink(link){
+function openLink(link) {
     window.location.href = link;
 }
 
-function buildOneResult(data){
+function buildOneResult(data) {
     document.getElementById("title").appendChild(document.createTextNode(data.title));
     document.getElementById("price").appendChild(document.createTextNode(data.price));
     document.getElementById("desc").appendChild(document.createTextNode(data.description));
@@ -83,15 +83,16 @@ function buildOneResult(data){
 }
 
 function oneResultLoader(path) {
-    if (path != undefined) {
-        let id = path.replace("?", "");
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 200) {
-                buildOneResult(JSON.parse(this.responseText));
-            }
-        };
-        xhttp.open("GET", `https://my-json-server.typicode.com/genilton2528/fakeapi/imoveis/${id}`, true);
-        xhttp.send();
+    if(path == ""){
+        path = "1";
     }
+    let id = path.replace("?", "");
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            buildOneResult(JSON.parse(this.responseText));
+        }
+    };
+    xhttp.open("GET", `https://my-json-server.typicode.com/genilton2528/fakeapi/imoveis/${id}`, true);
+    xhttp.send();
 }
