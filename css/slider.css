@@ -1,7 +1,3 @@
-*, *:before, *:after {
-    box-sizing: inherit;
-}
-
 .slide-display-bottommiddle {
     position: absolute;
     left: 50%;
