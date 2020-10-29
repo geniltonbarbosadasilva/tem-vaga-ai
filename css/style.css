@@ -27,7 +27,7 @@ header {
 }
 
 
-h1, h2, h3,W h4, h5 {
+h1, h2, h3, h4, h5 {
   color: var(--text-color);
   font-family: inherit;
 }
@@ -156,11 +156,11 @@ input {
 }
 
 .info h3 {
-  display: inline;
+  display: inline-block;
 }
 
 .button {
-  display: inline;
+  display: inline-block;
   background-color: var(--button-color);
   color: var(--text-color);
   border: none;
@@ -251,6 +251,10 @@ input {
   background-color: #FFFFFF;
 }
 
+.grid-container h3{
+  color: var(--text-color-on-white);
+}
+
 .item {
   background-color: #ffffff;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .4);
@@ -319,7 +323,8 @@ input {
 }
 
 .item-partner img {
-  margin: 25px;
+  display: block;
+  margin: auto;
   max-width: 200px;
   max-height: 200px;
   border-radius: 100px;
