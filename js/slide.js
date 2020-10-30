@@ -1,8 +1,3 @@
-var slideIndex = 0;
-var retreat = 0;
-
-dotsUpdate();
-
 function right() {
     if ( slideIndex == 2 ) {
         slideIndex = 0;
@@ -40,4 +35,12 @@ function currentDiv(idex) {
     retreat = idex * -100;
     document.getElementById("slide-1").style.marginLeft = `${retreat}%`;
     dotsUpdate();
+}
+
+var slideIndex = 0;
+var retreat = 0;
+
+if(document.getElementById("slider")){
+    dotsUpdate();
+    setInterval( right, 1500);
 }

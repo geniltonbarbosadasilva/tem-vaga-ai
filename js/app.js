@@ -1,51 +1,31 @@
-window.onload = function () { loadContent() }
-
-/* 
-    <div class="item">
+function makeCard( { id, img_urls, title, price, description } ) {
+    return `<div id="${id}" class="item transition">
         <div class="card">
-            <img src="https://www.vaipradisney.com/blog/wp-content/uploads/2017/04/ALUGUEL-CASA-26.jpg" class="painel">
-            <h1>Teste</h1>
-            <p>Preço</p>
-            <p class="card-text">Descrição</p>
+            <img src="${img_urls[0]}">
+            <h1 class="dark-text">${title}</h1>
+            <p class="green-text">${price}</p>
+            <p class="card-text transition">${description}</p>
         </div>
-    </div> 
-*/
-
-
-function buildPage(data) {
-    for (key in data) {
-        let item = document.createElement("div");
-        let card = document.createElement("div");
-        let img = document.createElement("img");
-        let h1 = document.createElement("h1");
-        let price = document.createElement("p");
-        let desc = document.createElement("p");
-
-        item.setAttribute("class", "item");
-        item.setAttribute("id", data[key].id);
-        card.setAttribute("class", "card");
-        desc.setAttribute("class", "card-text");
-        img.setAttribute("src", data[key].img_urls[0]);
-        h1.appendChild(document.createTextNode(data[key].title));
-        price.appendChild(document.createTextNode(data[key].price));
-        desc.appendChild(document.createTextNode(data[key].description));
-
-        card.appendChild(img);
-        card.appendChild(h1);
-        card.appendChild(price);
-        card.appendChild(desc);
-        item.appendChild(card);
-        item.addEventListener("click", redirect);
-        document.getElementById("content-grid").appendChild(item);
-    }
+    </div>`;
 }
 
-function buildOnePage(data) {
-    alert(data);
+function buildPage(data) {
+    html = data.reduce( (accumulator, imovel) => { 
+        accumulator += makeCard(imovel);
+        return accumulator;
+    }, "");
+
+    document.getElementById("content-grid").innerHTML = html;
+
+    for (const item of document.getElementsByClassName("item")) {
+        item.addEventListener("click", redirect);
+    }    
 }
 
 function loadContent() {
-    if (document.getElementById("content-grid") != undefined) {
+    if(window.location.href.search("one-result") != -1){ 
+        oneResultLoader(window.location.search);
+    }else if (document.getElementById("content-grid") != undefined) {
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
@@ -55,20 +35,6 @@ function loadContent() {
         xhttp.open("GET", "https://my-json-server.typicode.com/genilton2528/fakeapi/imoveis/", true);
         xhttp.send();
     }
-}
-
-function redirect() {
-    window.location.href = "one-result.html?" + this.id;
-}
-
-function login() {
-    setTimeout(function () {
-        console.log("Login");
-    }, 2000);
-}
-
-function openLink(link) {
-    window.location.href = link;
 }
 
 function buildOneResult(data) {
@@ -96,3 +62,14 @@ function oneResultLoader(path) {
     xhttp.open("GET", `https://my-json-server.typicode.com/genilton2528/fakeapi/imoveis/${id}`, true);
     xhttp.send();
 }
+
+function redirect() {
+    window.location.href = "one-result.html?" + this.id;
+}
+
+function openLink(link) {
+    window.location.href = link;
+}
+
+
+window.onload = function () { loadContent() }

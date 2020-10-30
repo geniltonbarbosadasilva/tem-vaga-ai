@@ -6,17 +6,13 @@
     -ms-transform: translate(-50%,0%);
 }
 
-.slide-container, .slide-panel {
+.slide-container {
     padding: 0.01em 16px;
 }
 
 .slide-text-white, .slide-hover-text-white:hover {
+    transition: 1s;
     color: #fff!important;
-}
-
-.slide-section, .slide-code {
-    margin-top: 16px!important;
-    margin-bottom: 16px!important;
 }
 
 .slide-large {
@@ -36,10 +32,12 @@
 }
 
 .slide-text-khaki, .slide-hover-text-khaki:hover {
-    color: #f8b732!important;
+    transition: 1s;
+    color: #FFC22A!important;
 }
 
 .slide-white, .slide-hover-white:hover {
+    transition: 1s;
     color: #000!important;
     background-color: #fff!important;
 }
