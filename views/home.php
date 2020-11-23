@@ -2,7 +2,14 @@
 <html lang="pt-br">
 
 <head>
-    <?php include 'views-parts/head.php';?>
+    <meta charset="utf-8">
+    <title>Tem Vaga ai</title>
+    <link rel="shortcut icon" href="../img/ico.png">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@600&display=swap" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/4.5/examples/album/album.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/slider.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
 </head>
 
 <body>
@@ -66,7 +73,7 @@
         </h3>
 
         <div class="item transition">
-            <form autocomplete="off" class="form-search-home" action="result.html">
+            <form autocomplete="off" class="form-search-home" action="result.php">
                 <h1>Para onde vamos hoje?</h1>
                 <div class="dropdown">
                     <input id="search-local" type="text" name="fname" placeholder="Para onde?">
@@ -116,7 +123,9 @@
         </div>
     </div>
 
-    <?php include 'views-parts/footer.php';?>
+    <?php include 'views-parts/footer.php';
+        footer();
+    ?>
 
     <script src="../js/animation.js"></script>
     <script src="../js/app.js"></script>

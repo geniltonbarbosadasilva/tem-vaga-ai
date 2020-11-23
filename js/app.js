@@ -64,7 +64,7 @@ function oneResultLoader(path) {
 }
 
 function redirect() {
-    window.location.href = "one-result.html?" + this.id;
+    window.location.href = "one-result.php?" + this.id; 
 }
 
 function openLink(link) {
