@@ -2,14 +2,7 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="utf-8">
-    <title>Tem Vaga ai</title>
-    <link rel="shortcut icon" href="../img/ico.png">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@600&display=swap" rel="stylesheet">
-    <link href="https://getbootstrap.com/docs/4.5/examples/album/album.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="../css/slider.css">
-    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <?php include 'views-parts/head.php';?>
 </head>
 
 <body>
@@ -123,15 +116,8 @@
         </div>
     </div>
 
-    <footer>
-        <p>Não importa para onde você vá, temos uma vaga para você!</p>
-        <ul>
-            <li>© 2020 Tem Vaga Aí, Inc. All rights reserved</li>
-            <li><a href="#" class="fa fa-facebook transition"></a></li>
-            <li><a href="#" class="fa fa-twitter transition"></a></li>
-            <li><a href="#" class="fa fa-instagram transition"></a></li>
-        </ul>
-    </footer>
+    <?php include 'views-parts/footer.php';?>
+
     <script src="../js/animation.js"></script>
     <script src="../js/app.js"></script>
     <script src="../js/slide.js"></script>
