@@ -20,49 +20,59 @@
     headerResult();
     ?>
 
+    <div class="sidebar animate-left" style="display:none" id="mySidebar">
+        <a href="#" class="bar-item bar-button btn-close-bar" onclick="w3_close()">&#9776;</a>
+        <a href="#" class="bar-item bar-button">Seus aluguéis</a>
+        <a href="#" class="bar-item bar-button">Seus imóveis</a>
+    </div>
 
-    <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none" id="mySidebar">
-        <button class="w3-button w3-teal w3-xlarge" onclick="w3_close()">&#9776;</button>
-        <a href="#" class="w3-bar-item w3-button">Link 1</a>
-        <a href="#" class="w3-bar-item w3-button">Link 2</a>
-        <a href="#" class="w3-bar-item w3-button">Link 3</a>
+    <div id="openNav" class="closed-bar">
+        <button class="bar-button" onclick="w3_open()">&#9776;</button>
     </div>
 
     <main>
-        <div id="main">
-
-            <div class="w3-teal">
-                <button id="openNav" class="w3-button w3-teal w3-xlarge" onclick="w3_open()">&#9776;</button>
-            </div>
-            <div>
-                <p>In this example, the sidebar is hidden (style="display:none")</p>
-                <p>It is shown when you click on the menu icon in the top left corner.</p>
-                <p>When it is opened, it shifts the page content to the right.</p>
-                <p>We use JavaScript to add a 25% left margin to the div element with id="main" when this happens. The value "25%" matches the width of the sidebar.</p>
-            </div>
-
-        </div>
-
-
-        <script>
-            function w3_open() {
-                document.getElementById("main").style.marginLeft = "15%";
-                document.getElementById("mySidebar").style.width = "15%";
-                document.getElementById("mySidebar").style.display = "block";
-                document.getElementById("openNav").style.display = 'none';
-            }
-
-            function w3_close() {
-                document.getElementById("main").style.marginLeft = "0%";
-                document.getElementById("mySidebar").style.display = "none";
-                document.getElementById("openNav").style.display = "inline-block";
-            }
-        </script>
-
+        <table>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Points</th>
+            </tr>
+            <tr>
+                <td>Jill</td>
+                <td>Smith</td>
+                <td>50</td>
+            </tr>
+            <tr>
+                <td>Eve</td>
+                <td>Jackson</td>
+                <td>94</td>
+            </tr>
+            <tr>
+                <td>Adam</td>
+                <td>Johnson</td>
+                <td>67</td>
+            </tr>
+        </table>
     </main>
+
     <?php include 'views-parts/footer.php';
     footer();
     ?>
+    <script>
+        function w3_open() {
+            document.querySelector("main").style.marginLeft = "15%";
+            document.getElementById("mySidebar").style.width = "15%";
+            document.getElementById("mySidebar").style.display = "block";
+            document.getElementById("openNav").style.display = 'none';
+        }
+
+        function w3_close() {
+            document.querySelector("main").style.marginLeft = "5%";
+            document.getElementById("mySidebar").style.display = "none";
+            document.getElementById("openNav").style.display = "inline-block";
+        }
+    </script>
+
     <script src="../js/animation.js"></script>
     <script src="../js/app.js"></script>
     <script src="../js/slide.js"></script>

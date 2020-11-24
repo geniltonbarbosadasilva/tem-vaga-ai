@@ -1,175 +1,71 @@
-.w3-btn, .w3-button {
+.bar-button {
     border: none;
-    display: inline-block;
-    padding: 8px 16px;
     vertical-align: middle;
-    overflow: hidden;
     text-decoration: none;
-    color: inherit;
-    background-color: inherit;
     text-align: center;
     cursor: pointer;
-    white-space: nowrap
+    white-space: nowrap;
+    outline: none;
 }
 
-.w3-btn:hover {
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
-}
-
-.w3-btn, .w3-button {
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none
-}
-
-.w3-disabled, .w3-btn:disabled, .w3-button:disabled {
-    cursor: not-allowed;
-    opacity: 0.3
-}
-
-.w3-dropdown-hover:hover>.w3-button:first-child, .w3-dropdown-click:hover>.w3-button:first-child {
-    background-color: #ccc;
-    color: #000
-}
-
-.w3-sidebar {
+.sidebar {
     height: 100%;
-    width: 200px;
     background-color: #fff;
     position: fixed!important;
     z-index: 1;
-    overflow: auto
-}
-
-.w3-bar-block .w3-dropdown-hover, .w3-bar-block .w3-dropdown-click {
-    width: 100%
-}
-
-.w3-bar-block .w3-dropdown-hover .w3-dropdown-content, .w3-bar-block .w3-dropdown-click .w3-dropdown-content {
-    min-width: 100%
-}
-
-.w3-bar-block .w3-dropdown-hover .w3-button, .w3-bar-block .w3-dropdown-click .w3-button {
-    width: 100%;
-    text-align: left;
-    padding: 8px 16px
-}
-
-.w3-bar .w3-bar-item {
-    padding: 8px 16px;
-    float: left;
-    width: auto;
-    border: none;
-    display: block;
-    outline: 0
-}
-
-.w3-bar .w3-button {
-    white-space: normal
-}
-
-.w3-bar-block .w3-bar-item {
-    width: 100%;
-    display: block;
-    padding: 8px 16px;
-    text-align: left;
-    border: none;
-    white-space: normal;
-    float: none;
-    outline: 0
-}
-
-.w3-bar-block.w3-center .w3-bar-item {
-    text-align: center
-}
-
-@media (max-width:600px) {
-    .w3-modal-content {
-        margin: 0 10px;
-        width: auto!important
-    }
-    .w3-modal {
-        padding-top: 30px
-    }
-    .w3-dropdown-hover.w3-mobile .w3-dropdown-content, .w3-dropdown-click.w3-mobile .w3-dropdown-content {
-        position: relative
-    }
-    .w3-hide-small {
-        display: none!important
-    }
-    .w3-mobile {
-        display: block;
-        width: 100%!important
-    }
-    .w3-bar-item .w3-mobile, .w3-dropdown-hover.w3-mobile, .w3-dropdown-click.w3-mobile {
-        text-align: center
-    }
-    .w3-dropdown-hover.w3-mobile, .w3-dropdown-hover.w3-mobile .w3-btn, .w3-dropdown-hover.w3-mobile .w3-button, .w3-dropdown-click.w3-mobile, .w3-dropdown-click.w3-mobile .w3-btn, .w3-dropdown-click.w3-mobile .w3-button {
-        width: 100%
-    }
-}
-
-@media (min-width:993px) {
-    .w3-modal-content {
-        width: 900px
-    }
-    .w3-hide-large {
-        display: none!important
-    }
-    .w3-sidebar.w3-collapse {
-        display: block!important
-    }
-}
-
-@media (max-width:992px) {
-    .w3-sidebar.w3-collapse {
-        display: none
-    }
-    .w3-main {
-        margin-left: 0!important;
-        margin-right: 0!important
-    }
-    .w3-auto {
-        max-width: 100%
-    }
-}
-
-.w3-card, .w3-card-2 {
+    overflow: auto;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12)
 }
 
-.w3-card-4, .w3-hover-shadow:hover {
-    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 4px 20px 0 rgba(0, 0, 0, 0.19)
+.bar-item {
+    padding: 8px 16px;
+    width: auto;
+    border: none;
+    display: block;
+    outline: none;
+    text-align: center;
+    white-space: normal;
+    color: #404040;
+    transition: 0.5s;
 }
 
-.w3-animate-left {
+.bar-item:hover{
+    color: #FFFFFF;
+    background-color: #FFC22A;
+}
+
+.animate-left {
     position: relative;
-    animation: animateleft 0.4s;
+    animation: animateleft 0.7s;
 }
 
-.w3-large {
-    font-size: 18px!important
-}
-
-.w3-xlarge {
-    font-size: 24px!important
-}
-
-.w3-button:hover {
-    color: #000!important;
-    background-color: #ccc!important
-}
-
-.w3-teal, .w3-hover-teal:hover {
+.btn-close-bar{
     color: #fff!important;
-    background-color: #009688!important
+    background-color: rgb(100, 200, 240)!important;
+    text-align: right;
+    font-size: 25px;
 }
 
-#main {
+.closed-bar {
+    color: #fff!important;
+    background-color: rgb(100, 200, 240)!important;
+    position: fixed;
+    width: 5%;
+    height: 100%;
+    overflow: auto;
+    max-width: 45px;
+}
+
+.closed-bar .bar-button{
+    color: #fff!important;
+    background-color: rgb(110, 200, 240)!important; /* 139 198 227 */
+    font-size: 25px;
+    padding: 8px;
+}
+
+main {
     transition: margin-left 0.4s;
+    margin-left: 5%;
 }
 
 @keyframes animateleft {

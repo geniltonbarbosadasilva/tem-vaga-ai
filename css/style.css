@@ -429,7 +429,7 @@ footer ul li svg:hover {
 .content-view .slider {
   margin: 5%;
   background-color: var(--background-color);
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .4);
+  box-shadow: 0 1px 2px 0 rgba(160, 150, 150, 0.4);
   border: none;
   border-radius: 5px;
 }
@@ -459,4 +459,22 @@ footer ul li svg:hover {
     font-size: 10px;
     padding: 3px;
   }
+}
+
+table {
+  margin: 10px;
+  border-collapse: collapse;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  border-radius: 5px;
+  width: 50%;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #404040;
+  color: #FFFFFF;
 }

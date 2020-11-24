@@ -37,7 +37,7 @@ function headerHome()
             <div class="menu">
                 <ul>
                     <li><a href="#" onclick="openModal()" class="transition">Entre</a></li>
-                    <li><a class="transition" href="#">Seja um anfitrião</a></li>
+                    <li><a class="transition" href="control-panel.php">Seja um anfitrião</a></li>
                 </ul>
             </div>
         </div>'
