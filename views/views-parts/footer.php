@@ -2,7 +2,8 @@
 
 function footer()
 {
-    echo '<footer>
+    echo 
+    '<footer>
         <p>Não importa para onde você vá, temos uma vaga para você!</p>
         <ul>
             <li>© ' . date("Y") . ' Tem Vaga Aí, Inc. All rights reserved</li>

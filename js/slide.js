@@ -42,5 +42,5 @@ var retreat = 0;
 
 if(document.getElementById("slider")){
     dotsUpdate();
-    setInterval( right, 1500);
+    setInterval( right, 2500);
 }

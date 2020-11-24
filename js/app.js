@@ -71,5 +71,12 @@ function openLink(link) {
     window.location.href = link;
 }
 
+function openModal() {
+    document.getElementById("id-modal").style.display="block";
+}
+
+function closeModal() {
+    document.getElementById("id-modal").style.display="none";
+}
 
 window.onload = function () { loadContent() }
