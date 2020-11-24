@@ -16,24 +16,25 @@
     <?php include 'views-parts/header.php';
     headerResult();
     ?>
-    <div class="container">
-        <div class="content-view">
-            <?php
-            include 'views-parts/slider.php';
+    <main>
+        <div class="container">
+            <div class="content-view">
+                <?php
+                include 'views-parts/slider.php';
 
-            slider();
-            ?>
-            <div class="item-view">
-                <h1 class="dark-text title" id="title"></h1>
-                <p class="green-text" id="price"></p>
-                <p id="desc" class="text"></p>
-                <p id="address" class="text"></p>
-                <button class="search-btn transition" type="button">Fechar Negócio!</button>
+                slider();
+                ?>
+                <div class="item-view">
+                    <h1 class="dark-text title" id="title"></h1>
+                    <p class="green-text" id="price"></p>
+                    <p id="desc" class="text"></p>
+                    <p id="address" class="text"></p>
+                    <button class="search-btn transition" type="button">Fechar Negócio!</button>
+                </div>
+
             </div>
-
         </div>
-    </div>
-
+    </main>
     <?php include 'views-parts/footer.php';
     footer();
     ?>

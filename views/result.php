@@ -17,12 +17,12 @@
 	<?php include 'views-parts/header.php';
 	headerResult();
 	?>
-
-	<div class="container">
-		<div id="content-grid" class="grid-container">
+	<main>
+		<div class="container">
+			<div id="content-grid" class="grid-container">
+			</div>
 		</div>
-	</div>
-
+	</main>
 	<?php include 'views-parts/footer.php';
 	footer();
 	?>

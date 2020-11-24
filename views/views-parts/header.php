@@ -28,7 +28,7 @@ function headerHome()
     '<header>
         <div class="navbar">
             <div class="logo transition" id="logo">
-                <a href="index.html"><img src="../img/logo.png" alt="logo"></a>
+                <a href="home.php"><img src="../img/logo.png" alt="logo"></a>
             </div>
             <div class="info">
                 <h3> Confira nossas politicas sobre o COVID-19</h3>
@@ -67,7 +67,7 @@ function headerResult()
             <input type="number" name="fname" placeholder="quantas pessoas?">
             <input type="date" name="fname" placeholder="quando?">
 
-            <button onclick="openLink("result.php")" type="button" class="search-btn transition">Buscar</button>
+            <button onclick="openLink()" type="button" class="search-btn transition">Buscar</button>
         </form>
 
         <div class="menu">

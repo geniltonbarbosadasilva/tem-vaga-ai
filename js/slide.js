@@ -8,6 +8,7 @@ function right() {
     }
     document.getElementById("slide-1").style.marginLeft = `${retreat}%`;
     dotsUpdate();
+    restartPresentation();
 }
 
 function left() {
@@ -20,6 +21,7 @@ function left() {
     }
     document.getElementById("slide-1").style.marginLeft = `${retreat}%`;
     dotsUpdate();
+    restartPresentation();
 }
 
 function dotsUpdate() {
@@ -35,12 +37,20 @@ function currentDiv(idex) {
     retreat = idex * -100;
     document.getElementById("slide-1").style.marginLeft = `${retreat}%`;
     dotsUpdate();
+    restartPresentation();
+}
+
+function restartPresentation() {
+    clearInterval(interval);
+    interval = setInterval( right, timeInterval);
 }
 
 var slideIndex = 0;
 var retreat = 0;
+const timeInterval = 2500;
+var interval;
 
 if(document.getElementById("slider")){
     dotsUpdate();
-    setInterval( right, 2500);
+    interval = setInterval( right, timeInterval);
 }

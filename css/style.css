@@ -224,8 +224,8 @@ input {
   display: block;
 }
 
-.container {
-  min-height: calc(80vh - 50px);
+main {
+  min-height: calc(80vh - 150px);
   /* Mantem o Footer embaixo */
 }
 
@@ -351,6 +351,8 @@ input {
 }
 
 footer {
+  position: sticky;
+  z-index: 1;
   padding-top: 2rem;
   padding-bottom: 2rem;
   width: 100%;
