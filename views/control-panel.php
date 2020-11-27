@@ -17,13 +17,15 @@
 
 <body>
     <?php include 'views-parts/header.php';
-    headerResult();
+        headerResult();
     ?>
 
     <div class="sidebar animate-left" style="display:none" id="mySidebar">
         <a href="#" class="bar-item bar-button btn-close-bar" onclick="w3_close()">&#9776;</a>
-        <a href="#" class="bar-item bar-button">Seus aluguéis</a>
-        <a href="#" class="bar-item bar-button">Seus imóveis</a>
+        <a href="#" class="bar-item bar-button">Usuarios</a>
+        <a href="#" class="bar-item bar-button">Alugueis</a>
+        <a href="#" class="bar-item bar-button">imoveis</a>
+        <a href="#" class="bar-item bar-button">Tokens</a>
     </div>
 
     <div id="openNav" class="closed-bar">
@@ -31,48 +33,22 @@
     </div>
 
     <main>
-        <table>
-            <tr>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Points</th>
-            </tr>
-            <tr>
-                <td>Jill</td>
-                <td>Smith</td>
-                <td>50</td>
-            </tr>
-            <tr>
-                <td>Eve</td>
-                <td>Jackson</td>
-                <td>94</td>
-            </tr>
-            <tr>
-                <td>Adam</td>
-                <td>Johnson</td>
-                <td>67</td>
-            </tr>
-        </table>
+        <?php
+            include '../app/Users.php';
+
+            if($_GET["message"]){
+                echo "<p class='message'>" . $_GET["message"] . "<p>";
+            }   
+            $users = new Users();
+            $users->table();
+        ?>
     </main>
 
     <?php include 'views-parts/footer.php';
     footer();
     ?>
-    <script>
-        function w3_open() {
-            document.querySelector("main").style.marginLeft = "15%";
-            document.getElementById("mySidebar").style.width = "15%";
-            document.getElementById("mySidebar").style.display = "block";
-            document.getElementById("openNav").style.display = 'none';
-        }
 
-        function w3_close() {
-            document.querySelector("main").style.marginLeft = "5%";
-            document.getElementById("mySidebar").style.display = "none";
-            document.getElementById("openNav").style.display = "inline-block";
-        }
-    </script>
-
+    <script src="../js/sidebar.js"></script>
     <script src="../js/animation.js"></script>
     <script src="../js/app.js"></script>
     <script src="../js/slide.js"></script>

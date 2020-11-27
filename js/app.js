@@ -67,7 +67,7 @@ function redirect() {
     window.location.href = "one-result.php?" + this.id; 
 }
 
-function openLink(link = 'result.php') {
+function openLink(link) {
     window.location.href = link;
 }
 
