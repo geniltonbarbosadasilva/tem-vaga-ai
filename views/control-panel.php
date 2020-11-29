@@ -11,7 +11,6 @@
     <link rel="stylesheet" type="text/css" href="../css/slider.css">
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <link rel="stylesheet" type="text/css" href="../css/sidebar.css">
-    <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
 
 </head>
 
@@ -33,11 +32,12 @@
     </div>
 
     <main>
+        <button class="create-button transition"><a href="create-user.php">Novo +</a></button>        
         <?php
             include '../app/Users.php';
 
-            if($_GET["message"]){
-                echo "<p class='message'>" . $_GET["message"] . "<p>";
+            if(array_key_exists("message", $_GET)){
+                echo "<p id='message' class='transition message ". $_GET["type"] ." '>" . $_GET["message"] . "<p>";
             }   
             $users = new Users();
             $users->table();

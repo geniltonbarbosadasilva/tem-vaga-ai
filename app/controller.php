@@ -1,5 +1,4 @@
 <?php
-echo "id=" . $_GET["id"] . "<br>";
 
 include 'Users.php';
 include 'Properties.php';
@@ -10,7 +9,6 @@ include 'Utils.php';
 switch ($_GET["table"]) {
     case "users":              
         $table = new Users();  
-        echo "table=" . $_GET["table"] . "<br>";
         break;
     case "properties":
         $table = new Properties();
@@ -27,10 +25,16 @@ switch ($_GET["table"]) {
 }
 
 if ($_GET["operation"] === "delete") {
-    echo "operation=" . $_GET["operation"];
-    $table->delete($_GET["id"]);
-    redirect_to( "../views/control-panel.php","Deletado com Sucesso!");
+    $response = $table->delete($_GET["id"]);
+    redirect_to("../views/control-panel.php", $response["message"], $response["type"]);
 }
 
 if ($_GET["operation"] === "update") {
+    $response = $table->update($_GET["id"], $_POST);
+    redirect_to("../views/control-panel.php", $response["message"], $response["type"]);
+}
+
+if ($_GET["operation"] === "create") {
+    $response = $table->create($_POST);
+    redirect_to("../views/control-panel.php", $response["message"], $response["type"]);
 }

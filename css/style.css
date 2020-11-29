@@ -23,7 +23,8 @@ header {
 
 .transition {
   transition: 0.5s;
-  transition-timing-function: ease-in;
+  transition-timing-function: linear;
+  cursor: pointer;
 }
 
 h1, h2, h3, h4, h5 {
@@ -478,4 +479,16 @@ th, td {
 tr:nth-child(even) {
   background-color: #404040;
   color: #FFFFFF;
+}
+
+.create-form {
+  margin: 20px;
+  padding: 10px;
+}
+
+.create-form input {
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .8);
+  width: 80%;
+  display: block;
+  margin: 20px;
 }

@@ -1,8 +1,7 @@
 <?php
 
-function redirect_to($url, $message = "")
+function redirect_to($url, $message = "", $type = "")
 {
-    header('Location: ' . $url . "?message=$message");
-
+    header('Location: ' . $url . "?message=$message&type=$type");
     exit();
 }
