@@ -1,7 +1,5 @@
 <?php
 
-    include 'app/Utils.php';
+    require_once("autoload.php");
 
-    redirect_to("views/home.php");
-   
-?>
+    Utils::redirect_to("views/home.php");

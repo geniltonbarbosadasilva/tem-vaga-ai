@@ -1,7 +1,11 @@
 <?php
 
-function redirect_to($url, $message = "", $type = "")
+class Utils
 {
-    header('Location: ' . $url . "?message=$message&type=$type");
-    exit();
+    public static function redirect_to($url, array $parameters = [])
+    {
+        $query = http_build_query($parameters);
+        header('Location: ' . $url . "?$query");
+        exit();
+    }
 }

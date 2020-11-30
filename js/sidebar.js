@@ -1,14 +1,27 @@
-function w3_open() {
+function sidebar_open() {
     document.querySelector("main").style.marginLeft = "15%";
     document.getElementById("mySidebar").style.width = "15%";
     document.getElementById("mySidebar").style.display = "block";
     document.getElementById("openNav").style.display = 'none';
 }
 
-function w3_close() {
+function sidebar_close() {
     document.querySelector("main").style.marginLeft = "5%";
     document.getElementById("mySidebar").style.display = "none";
     document.getElementById("openNav").style.display = "inline-block";
 }
 
-w3_open();
+sidebar_open();
+
+var urlParams = new URLSearchParams(window.location.search);
+
+switch (urlParams.get('table')) {
+    case "user":
+        document.getElementById("user").classList.add("negative");
+        break;
+    case "property":
+        document.getElementById("property").classList.add("negative");
+        break;
+    default:
+        break;
+}

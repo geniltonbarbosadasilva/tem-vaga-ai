@@ -1,6 +1,7 @@
+<?php require_once("../autoload.php"); ?>
+
 <!doctype html>
 <html lang="pt-br">
-
 <head>
     <meta charset="utf-8">
     <title>Tem Vaga ai</title>
@@ -14,15 +15,13 @@
 </head>
 
 <body>
-    <?php 
-        include 'views-parts/header.php';
-        include '../app/Users.php';
-
+    <?php include 'views-parts/header.php';
         headerResult();
     ?>
 
     <main>
         <?php 
+            $id = "";
             $name = "";
             $email = "";
             $password = "";
@@ -30,14 +29,17 @@
             if(array_key_exists("id", $_GET)){
                 $user = new Users();
                 [ 
+                    "id" => $id,
                     "name" => $name, 
                     "email" => $email,
                     "password" => $password
                 ] = $user->getRecordById($_GET["id"]);
-                $action = "../app/controller.php?id=". $_GET["id"] ."&operation=update&table=users";
+                $action = "../app/controller.php?id=$id&operation=update&table=users";
             }   
         ?>
         <form class="create-form" action="<?php echo $action ?>" method="post">
+            <input type="hidden" name="id" value="<?php echo $id ?>">
+
             <label for="name">Nome:</label>
             <input id="name" type="text" name="name" value="<?php echo $name ?>">
 

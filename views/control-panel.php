@@ -1,3 +1,6 @@
+<?php 
+    require_once("../autoload.php");
+?>
 <!doctype html>
 <html lang="pt-br">
 
@@ -20,27 +23,40 @@
     ?>
 
     <div class="sidebar animate-left" style="display:none" id="mySidebar">
-        <a href="#" class="bar-item bar-button btn-close-bar" onclick="w3_close()">&#9776;</a>
-        <a href="#" class="bar-item bar-button">Usuarios</a>
+        <a href="#" class="bar-item bar-button btn-close-bar" onclick="sidebar_close()">&#9776;</a>
+        <a id="user" href="control-panel.php?table=user" class="bar-item bar-button">Usuarios</a>
+        <a id="property" href="control-panel.php?table=property" class="bar-item bar-button">Imoveis</a>
         <a href="#" class="bar-item bar-button">Alugueis</a>
-        <a href="#" class="bar-item bar-button">imoveis</a>
         <a href="#" class="bar-item bar-button">Tokens</a>
     </div>
 
     <div id="openNav" class="closed-bar">
-        <button class="bar-button" onclick="w3_open()">&#9776;</button>
+        <button class="bar-button" onclick="sidebar_open()">&#9776;</button>
     </div>
 
     <main>
-        <button class="create-button transition"><a href="create-user.php">Novo +</a></button>        
         <?php
-            include '../app/Users.php';
-
+            $table = (isset($_GET["table"]))? $_GET["table"] : "user";
+            echo "<a href='create-$table.php'>
+                    <button class='create-button transition'>Novo +</button>
+                </a>";
             if(array_key_exists("message", $_GET)){
                 echo "<p id='message' class='transition message ". $_GET["type"] ." '>" . $_GET["message"] . "<p>";
             }   
-            $users = new Users();
-            $users->table();
+
+            switch ($table) {
+                case 'user':
+                    $users = new Users();
+                    $users->table();                    
+                    break;
+                case 'property':
+                    $properties = new Properties();
+                    $properties->table();
+                    break;
+                default:
+                    
+                    break;
+            }            
         ?>
     </main>
 

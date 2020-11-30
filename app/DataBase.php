@@ -18,7 +18,7 @@ class DataBase {
     public function connect()
     {
         // Create connection
-        $connection = new mysqli($this->servername, $this->username, $this->password, $this->database);
+        $connection = new Mysqli($this->servername, $this->username, $this->password, $this->database);
     
         // Check connection
         if ($connection->connect_error) {

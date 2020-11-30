@@ -21,11 +21,7 @@ CREATE TABLE Properties(
     title varchar(50) NOT NULL,
     price float NOT NULL,
     description text,
-    street varchar(100) NOT NULL,
-    number int,
-    district varchar(100) NOT NULL,
-    city varchar(100) NOT NULL,
-    state varchar(100) NOT NULL,
+    address varchar(100) NOT NULL,
     PRIMARY KEY (id),
     FOREIGN KEY (id_owner) REFERENCES Users(id)
 );

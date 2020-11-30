@@ -1,10 +1,6 @@
 <?php
 
-include 'Users.php';
-include 'Properties.php';
-include 'Rents.php';
-include 'Tokens.php';
-include 'Utils.php';
+require_once("../autoload.php");
 
 switch ($_GET["table"]) {
     case "users":              
@@ -26,15 +22,15 @@ switch ($_GET["table"]) {
 
 if ($_GET["operation"] === "delete") {
     $response = $table->delete($_GET["id"]);
-    redirect_to("../views/control-panel.php", $response["message"], $response["type"]);
+    Utils::redirect_to("../views/control-panel.php", $response);
 }
 
 if ($_GET["operation"] === "update") {
-    $response = $table->update($_GET["id"], $_POST);
-    redirect_to("../views/control-panel.php", $response["message"], $response["type"]);
+    $response = $table->update($_POST);
+    Utils::redirect_to("../views/control-panel.php", $response);
 }
 
 if ($_GET["operation"] === "create") {
     $response = $table->create($_POST);
-    redirect_to("../views/control-panel.php", $response["message"], $response["type"]);
+    Utils::redirect_to("../views/control-panel.php", $response);
 }

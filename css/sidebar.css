@@ -93,6 +93,7 @@ main {
 
 .create-button {
     background-color: rgb(110, 200, 240);
+    color: #FFFFFF;
     border: none;
     border-radius: 5px;
     font-family: inherit;
@@ -103,12 +104,8 @@ main {
     outline: none;
 }
 
-.create-button a {
-    color: #FFFFFF;
-}
-
 .create-button:hover {
-    background-color: rgb(72, 218, 255);
+    background-color: rgb( 90, 230, 255);
 }
 
 .fa-minus-circle{
@@ -117,6 +114,11 @@ main {
 
 .fa-pencil {
     color: #4CAF50;
+}
+
+.negative {
+    background-color: #404040;
+    color: #FFFFFF;
 }
 
 @keyframes animateleft {
