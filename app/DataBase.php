@@ -2,8 +2,8 @@
 
 class DataBase {
     private $servername = "localhost";
-    private $username = "admin";
-    private $password = "password";
+    private $username = "root";
+    private $password = "";
     private $database = "temvaga";
     private $connection;
 
