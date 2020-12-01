@@ -479,7 +479,8 @@ th, td {
 }
 
 tr:nth-child(even) {
-  background-color: rgb(190, 250, 255)
+  background-color: var(--main-color);
+  color: var(--text-color);
 }
 
 .create-form {
