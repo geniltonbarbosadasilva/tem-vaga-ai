@@ -479,8 +479,7 @@ th, td {
 }
 
 tr:nth-child(even) {
-  background-color: #404040;
-  color: #FFFFFF;
+  background-color: rgb(190, 250, 255)
 }
 
 .create-form {

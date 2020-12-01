@@ -13,7 +13,7 @@ class Rents extends DataBase
     }
 
     public function table()
-    {
+    {   // id, id_user, id_property, check_in, check_out
         try {
             $sql = "SELECT * FROM Rents";
             $results = $this->getConnection()->query($sql);
@@ -23,29 +23,41 @@ class Rents extends DataBase
                     "operation" => "delete",
                     "table" => "rents"
                 ]);
+                $user = new Users();
+
                 echo
                     "<table>
                     <tr>
                         <th>ID</th>
+                        <th>Propietario</th>
                         <th>Nome</th>
-                        <th>E-mail</th>
-                        <th>Senha</th>
+                        <th>Preço</th>
+                        <th>Descriçao</th>
+                        <th>Endereço</th>
                         <th></th>
                         <th></th>
                     </tr>";
+
                 while ($row = $results->fetch_assoc()) {
-                    [
+                    [                         
                         "id" => $id,
-                        "name" => $name,
-                        "email" => $email,
-                        "password" => $password
+                        "id_owner" => $id_owner,
+                        "title" => $title,
+                        "price" => $price,
+                        "description" => $description,
+                        "address" => $address
                     ] = $row;
+                    $owner = $user->getRecordById($id_owner);
+                    $owner_name = (array_key_exists("name", $owner))? $owner["name"] : "";
+
                     echo
                         "<tr>
                             <td>$id</td>
-                            <td>$name</td>
-                            <td>$email</td>
-                            <td>$password</td>
+                            <td>$owner_name</td>
+                            <td>$title</td>
+                            <td>$price</td>
+                            <td>$description</td>
+                            <td>$address</td>
                             <td>
                                 <a href='create-rent.php?id=$id'>
                                     <i class=\"transition fa fa-pencil\"></i>
@@ -60,7 +72,7 @@ class Rents extends DataBase
                 }
                 echo "</table>";
             } else {
-                echo "0 results";
+                echo "<p>0 results</p>";
             }
         } catch (\Throwable $th) {
             echo 'Exceção capturada: ' . $th->getMessage() . "\n";
@@ -75,18 +87,21 @@ class Rents extends DataBase
             if ($this->getConnection()->query($sql) === TRUE) {
                 return [
                     "type" => "success",
-                    "message" => "Registro excluído com sucesso"
+                    "message" => "Registro excluído com sucesso",
+                    "table" => "rent"
                 ];
             } else {
                 return [
                     "type" => "fail",
-                    "message" => "Erro ao excluir registro: " . $this->getConnection()->error
+                    "message" => "Erro ao excluir registro: " . $this->getConnection()->error,
+                    "table" => "rent"
                 ];
             }
         } catch (\Throwable $th) {
             return [
                 "type" => "fail",
-                "message" => "Exceção capturada: " . $th->getMessage()
+                "message" => "Exceção capturada: " . $th->getMessage(),
+                "table" => "rent"
             ];
         }
     }
@@ -94,27 +109,35 @@ class Rents extends DataBase
     public function create($rent)
     {
         try {
-            $name = $rent["name"];
-            $email = $rent["email"];
-            $password =  $rent["password"];
+            [
+                "id" => $id,
+                "id_owner" => $id_owner,
+                "title" => $title,
+                "price" => $price,
+                "description" => $description,
+                "address" => $address
+            ] = $rent;                
 
-            $sql = "INSERT INTO Rents ( name, email, password)
-                    VALUES ('$name', '$email', '$password')";
+            $sql = "INSERT INTO Rents ( id_owner, title, price, description, address)
+                    VALUES ('$id_owner', '$title', '$price', '$description', '$address')";
             if ($this->getConnection()->query($sql) === TRUE) {
                 return [
                     "type" => "success",
-                    "message" => "Novo registro criado com sucesso"
+                    "message" => "Novo registro criado com sucesso",
+                    "table" => "rent"
                 ];
             } else {
                 return [
                     "type" => "fail",
-                    "message" => $this->getConnection()->error
+                    "message" => $this->getConnection()->error,
+                    "table" => "rent"
                 ];
             }
         } catch (\Throwable $th) {
             return [
                 "type" => "fail",
-                "message" => "Exceção capturada: " . $th->getMessage()
+                "message" => "Exceção capturada: " . $th->getMessage(),
+                "table" => "rent"
             ];
         }
     }
@@ -124,28 +147,33 @@ class Rents extends DataBase
         try {
             [
                 "id" => $id,
-                "name" => $name,
-                "email" => $email,
-                "password" => $password
-            ] = $record;
+                "id_owner" => $id_owner,
+                "title" => $title,
+                "price" => $price,
+                "description" => $description,
+                "address" => $address                
+            ] = $record;                
 
-            $sql = "UPDATE Rents SET name='$name', email='$email', password='$password' WHERE id=$id";
+            $sql = "UPDATE Rents SET id_owner='$id_owner', title='$title', price='$price', description='$description', address='$address' WHERE id=$id";
 
             if ($this->getConnection()->query($sql) === TRUE) {
                 return [
                     "type" => "success",
-                    "message" => "Registro atualizado com sucesso"
+                    "message" => "Registro atualizado com sucesso",
+                    "table" => "rent"
                 ];
             } else {
                 return [
                     "type" => "fail",
-                    "message" => $this->getConnection()->error
+                    "message" => $this->getConnection()->error,
+                    "table" => "rent"
                 ];
             }
         } catch (\Throwable $th) {
             return [
                 "type" => "fail",
-                "message" => "Exceção capturada: " . $th->getMessage()
+                "message" => "Exceção capturada: " . $th->getMessage(),
+                "table" => "rent"
             ];
         }
     }
@@ -157,20 +185,35 @@ class Rents extends DataBase
             $results = $this->getConnection()->query($sql);
 
             if ($results->num_rows > 0) {
-                $result = $results->fetch_object();
-                return [
-                    "id" => $result->id,
-                    "name" => $result->name,
-                    "email" => $result->email,
-                    "password" => $result->password
-                ];
+                return $results->fetch_array(MYSQLI_ASSOC);
             } else {
                 echo "0 results";
             }
         } catch (\Throwable $th) {
             return [
                 "type" => "fail",
-                "message" => "Exceção capturada: " . $th->getMessage()
+                "message" => "Exceção capturada: " . $th->getMessage(),
+                "table" => "rent"
+            ];
+        }
+    }
+
+    public function all()
+    {
+        try {
+            $sql = "SELECT * FROM Rents";
+            $results = $this->getConnection()->query($sql);
+
+            if ($results->num_rows > 0) {
+                return $results->fetch_all(MYSQLI_ASSOC);
+            } else {
+                return [];
+            }
+        } catch (\Throwable $th) {
+            return [
+                "type" => "fail",
+                "message" => "Exceção capturada: " . $th->getMessage(),
+                "table" => "rent"
             ];
         }
     }

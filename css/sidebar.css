@@ -40,10 +40,11 @@
 }
 
 .btn-close-bar {
-    color: #fff!important;
+    color: #fff;
     background-color: rgb(100, 200, 240)!important;
     text-align: right;
     font-size: 25px;
+    transition: 0.5s;
 }
 
 .closed-bar {
@@ -59,7 +60,6 @@
 .closed-bar .bar-button {
     color: #fff!important;
     background-color: rgb(110, 200, 240)!important;
-    /* 139 198 227 */
     font-size: 25px;
     padding: 8px;
 }
@@ -117,8 +117,8 @@ main {
 }
 
 .negative {
-    background-color: #404040;
     color: #FFFFFF;
+    background-color: #FFC22A;
 }
 
 @keyframes animateleft {

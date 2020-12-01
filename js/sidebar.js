@@ -22,6 +22,13 @@ switch (urlParams.get('table')) {
     case "property":
         document.getElementById("property").classList.add("negative");
         break;
+    case "rent":
+        document.getElementById("rent").classList.add("negative");
+        break;
+    case "token":
+        document.getElementById("token").classList.add("negative");
+        break;
     default:
+        document.getElementById("user").classList.add("negative");
         break;
 }

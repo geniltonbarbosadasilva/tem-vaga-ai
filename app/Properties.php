@@ -13,7 +13,7 @@ class Properties extends DataBase
     }
 
     public function table()
-    { // id id_owner title price description street number district city state
+    {
         try {
             $sql = "SELECT * FROM Properties";
             $results = $this->getConnection()->query($sql);
