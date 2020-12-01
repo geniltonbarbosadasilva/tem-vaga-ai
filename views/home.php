@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="../css/slider.css">
     <link rel="stylesheet" type="text/css" href="../css/style.css">
-	<link rel="stylesheet" type="text/css" href="../css/style2.css">
 </head>
 
 <body>
@@ -32,7 +31,7 @@
         <div id="cor" class="grid-container">
           <h3 class="dark-text">
                 Acomode-se em um lugar novo. Descubra lugares perto de você para morar, trabalhar ou simplesmente relaxar.
-				<input type="button" class="search-btn transition" onclick="changeCSS('css/style2.css',0);" value="Altere a cor do site"> 
+				<input type="button" onclick="changeCSS('/css/style2.css',0);" value="Altere a cor do site"> 
             </h3>
 
             <div class="item transition">
@@ -89,7 +88,18 @@
     <script src="../js/animation.js"></script>
     <script src="../js/app.js"></script>
     <script src="../js/slide.js"></script>
-
+	<script>
+	function changeCSS(cssFile, cssLinkIndex){
+		var oldlink = document.getElementsByTagName("link").item(cssLinkIndex);
+		
+		var newlink = document.createElement("link");
+		newlink.setAttribute("rel","stylesheet");
+		newlink.setAttribute("type","text/css");
+		newlink.setAttribute("href",cssFile);
+		
+		document.getElementsByTagName("head").item(0).replaceChild(newlink,oldlink);
+	}
+	</script>
 </body>
 
 </html>
