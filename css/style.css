@@ -26,7 +26,7 @@ header {
 
 .transition {
   transition: 0.5s;
-  transition-timing-function: linear;
+  transition-timing-function: ease-in;
   cursor: pointer;
 }
 
@@ -153,7 +153,7 @@ input::placeholder {
 input, select, textarea {
   margin-left: 10px;
   margin-top: 15px;
-  box-shadow: 2px 2px 2px 0 var(--shadow-color);
+  box-shadow: 2px 2px 4px var(--shadow-color);
   border: none;
   color: var(--text-color-on-background);
   background-color: var(--background-color);
@@ -264,7 +264,7 @@ main {
 
 .item {
   background-color: var(--background-color);
-  box-shadow: 2px 2px 4px 0 var(--shadow-color);
+  box-shadow: 1px 1px 4px var(--shadow-color);
   border: none;
   color: var(--text-color-on-background);
   font-size: 1em;
@@ -276,12 +276,12 @@ main {
 }
 
 .item .card-text {
-  color: var(--text-color);
+  color: var(--background-color);
   font-size: 1px;
 }
 
 .item:hover {
-  box-shadow: 0 1px 2px 0 var(--shadow-color-hover);
+  box-shadow: 2px 2px 5px var(--shadow-color-hover);
   color: var(--text-color-on-background);
 }
 
@@ -300,14 +300,14 @@ main {
 
 .item-partner {
   background-color: var(--background-color);
-  box-shadow: 0 1px 2px 0 var(--shadow-color);
+  box-shadow: 1px 1px 4px var(--shadow-color);
   border: none;
   color: var(--text-color-on-background);
   border-radius: 5px;
 }
 
 .item-partner:hover {
-  box-shadow: 0 1px 2px 0 var(--shadow-color-hover);
+  box-shadow: 2px 2px 5px var(--shadow-color-hover);
 }
 
 .item-partner img {
@@ -325,7 +325,7 @@ main {
 
 .login {
   margin: 0px 10px;
-  box-shadow: 0 1px 2px 0 var(--shadow-color);
+  box-shadow: 1px 1px 4px var(--shadow-color);
   background-color: var(--background-color);
 }
 
@@ -341,7 +341,7 @@ main {
 }
 
 .login form input {
-  box-shadow: 0 1px 2px 0 var(--shadow-color);
+  box-shadow: 1px 1px 4px var(--shadow-color);
   width: 80%;
   display: block;
   margin: 20px;
@@ -418,7 +418,7 @@ footer ul li svg:hover {
 .content-view .item-view {
   margin: 5%;
   background-color: var(--background-color);
-  box-shadow: 0 1px 2px 0 var(--shadow-color);
+  box-shadow: 1px 1px 4px var(--shadow-color);
   border: none;
   color: var(--text-color-on-background);
   font-size: 1em;
@@ -444,7 +444,7 @@ footer ul li svg:hover {
 .content-view .slider {
   margin: 5%;
   background-color: var(--background-color);
-  box-shadow: 0 1px 2px 0 rgba(160, 150, 150, 0.4);
+  box-shadow: 1px 1px 4px 0 rgba(160, 150, 150, 0.4);
   border: none;
   border-radius: 5px;
 }
@@ -484,7 +484,7 @@ footer ul li svg:hover {
 table {
   margin: 10px;
   border-collapse: collapse;
-  box-shadow: 0 2px 5px 0 var(--shadow-color), 0 2px 10px 0 var(--shadow-color);
+  box-shadow: 1px 1px 4px var(--shadow-color);
   border-radius: 5px;
   width: auto;
   min-width: 85%;
@@ -508,7 +508,7 @@ tr:nth-child(even) {
 }
 
 .create-form input, .create-form select, .create-form textarea {
-  box-shadow: 0 1px 2px 0 var(--shadow-color);
+  box-shadow: 1px 1px 4px var(--shadow-color);
   width: 80%;
   display: block;
   margin: 20px;
