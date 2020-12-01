@@ -10,9 +10,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="../css/slider.css">
     <link rel="stylesheet" type="text/css" href="../css/style.css">
+	<link rel="stylesheet" type="text/css" href="../css/style2.css">
 </head>
 
 <body>
+
     <?php
     include 'views-parts/header.php';
     include 'views-parts/slider.php';
@@ -27,9 +29,10 @@
     ?>
 
     <main>
-        <div class="grid-container">
-            <h3 class="dark-text">
+        <div id="cor" class="grid-container">
+          <h3 class="dark-text">
                 Acomode-se em um lugar novo. Descubra lugares perto de você para morar, trabalhar ou simplesmente relaxar.
+				<input type="button" class="search-btn transition" onclick="changeCSS('css/style2.css',0);" value="Altere a cor do site"> 
             </h3>
 
             <div class="item transition">
@@ -86,6 +89,7 @@
     <script src="../js/animation.js"></script>
     <script src="../js/app.js"></script>
     <script src="../js/slide.js"></script>
+
 </body>
 
 </html>

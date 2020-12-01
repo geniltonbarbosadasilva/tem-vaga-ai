@@ -28,6 +28,7 @@
         <a id="property" href="control-panel.php?table=property" class="bar-item bar-button">Imoveis</a>
         <a href="#" class="bar-item bar-button">Alugueis</a>
         <a href="#" class="bar-item bar-button">Tokens</a>
+		<a href="create-user2.php" class="bar-item bar-button">Importar Usuários</a>
     </div>
 
     <div id="openNav" class="closed-bar">
