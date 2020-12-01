@@ -29,11 +29,12 @@
 
     <main>
         <div id="cor" class="grid-container">
-          <h3 class="dark-text">
-                Acomode-se em um lugar novo. Descubra lugares perto de você para morar, trabalhar ou simplesmente relaxar.
-				<input type="button" onclick="changeCSS('/css/style2.css',0);" value="Altere a cor do site"> 
-            </h3>
-
+            <div class="container">
+                <h3 class="dark-text">
+                    Acomode-se em um lugar novo. Descubra lugares perto de você para morar, 
+                    trabalhar ou simplesmente relaxar.                
+                </h3>
+            </div>
             <div class="item transition">
                 <form autocomplete="off" class="form-search-home" action="result.php">
                     <h1>Para onde vamos hoje?</h1>
@@ -52,7 +53,6 @@
                     <button type="submit" class="search-btn transition">Buscar</button>
                 </form>
             </div>
-
         </div>
 
         <div class="container">
@@ -88,18 +88,6 @@
     <script src="../js/animation.js"></script>
     <script src="../js/app.js"></script>
     <script src="../js/slide.js"></script>
-	<script>
-	function changeCSS(cssFile, cssLinkIndex){
-		var oldlink = document.getElementsByTagName("link").item(cssLinkIndex);
-		
-		var newlink = document.createElement("link");
-		newlink.setAttribute("rel","stylesheet");
-		newlink.setAttribute("type","text/css");
-		newlink.setAttribute("href",cssFile);
-		
-		document.getElementsByTagName("head").item(0).replaceChild(newlink,oldlink);
-	}
-	</script>
 </body>
 
 </html>

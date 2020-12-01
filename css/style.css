@@ -4,11 +4,14 @@
   --button-color-hover: #FFC22A;
   --background-color: #FFFFFF;
   --text-color: #FFFFFF;
-  --text-color-on-white: #404040;
+  --text-color-on-background: #404040;
+  --shadow-color: rgba(0, 0, 0, .4);
+  --shadow-color-hover: rgba(0, 0, 0, .8);
 }
 
 html, body {
   margin: 0px;
+  background-color: var(--background-color);
   font-family: 'Roboto Mono', monospace;
   font-size: 16px;
 }
@@ -125,6 +128,7 @@ a {
   border-radius: 5px;
   background-color: var(--main-color);
   overflow: auto;
+  display: inline;
 }
 
 .form-search-home {
@@ -137,12 +141,21 @@ a {
   overflow: auto;
 }
 
+label {
+  color: var(--text-color-on-background);
+  background-color: var(--background-color);
+}
+
+input::placeholder {
+  color: var(--text-color-on-background);
+}
+
 input, select, textarea {
   margin-left: 10px;
   margin-top: 15px;
-  box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, .2);
+  box-shadow: 2px 2px 2px 0 var(--shadow-color);
   border: none;
-  color: var(--text-color-on-white);
+  color: var(--text-color-on-background);
   background-color: var(--background-color);
   font-size: 1em;
   border-radius: 5px;
@@ -210,7 +223,7 @@ input, select, textarea {
 }
 
 .dropdown-content a {
-  color: var(--text-color-on-white);
+  color: var(--text-color-on-background);
   padding: 12px;
   text-decoration: none;
   border-radius: 5px;
@@ -246,14 +259,14 @@ main {
 }
 
 .dark-text {
-  color: var(--text-color-on-white);
+  color: var(--text-color-on-background);
 }
 
 .item {
   background-color: var(--background-color);
-  box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, .3);
+  box-shadow: 2px 2px 4px 0 var(--shadow-color);
   border: none;
-  color: var(--text-color-on-white);
+  color: var(--text-color-on-background);
   font-size: 1em;
   border-radius: 5px;
 }
@@ -268,12 +281,12 @@ main {
 }
 
 .item:hover {
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .8);
-  color: var(--text-color-on-white);
+  box-shadow: 0 1px 2px 0 var(--shadow-color-hover);
+  color: var(--text-color-on-background);
 }
 
 .item:hover .card-text {
-  color: var(--text-color-on-white);
+  color: var(--text-color-on-background);
   font-size: 1em;
 }
 
@@ -287,14 +300,14 @@ main {
 
 .item-partner {
   background-color: var(--background-color);
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .4);
+  box-shadow: 0 1px 2px 0 var(--shadow-color);
   border: none;
-  color: var(--text-color-on-white);
+  color: var(--text-color-on-background);
   border-radius: 5px;
 }
 
 .item-partner:hover {
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .8);
+  box-shadow: 0 1px 2px 0 var(--shadow-color-hover);
 }
 
 .item-partner img {
@@ -312,7 +325,7 @@ main {
 
 .login {
   margin: 0px 10px;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .8);
+  box-shadow: 0 1px 2px 0 var(--shadow-color);
   background-color: var(--background-color);
 }
 
@@ -328,7 +341,7 @@ main {
 }
 
 .login form input {
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .8);
+  box-shadow: 0 1px 2px 0 var(--shadow-color);
   width: 80%;
   display: block;
   margin: 20px;
@@ -405,15 +418,15 @@ footer ul li svg:hover {
 .content-view .item-view {
   margin: 5%;
   background-color: var(--background-color);
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .4);
+  box-shadow: 0 1px 2px 0 var(--shadow-color);
   border: none;
-  color: var(--text-color-on-white);
+  color: var(--text-color-on-background);
   font-size: 1em;
   border-radius: 5px;
 }
 
 .content-view .item-view p {
-  color: var(--text-color-on-white);
+  color: var(--text-color-on-background);
   margin: 2% 3%;
 }
 
@@ -445,6 +458,11 @@ footer ul li svg:hover {
   font-size: 2em;
 }
 
+.fa-adjust{
+  display: inline;
+  padding: 8px;
+}
+
 .fa:hover {
   color: var(--button-color-hover);
 }
@@ -466,10 +484,11 @@ footer ul li svg:hover {
 table {
   margin: 10px;
   border-collapse: collapse;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 5px 0 var(--shadow-color), 0 2px 10px 0 var(--shadow-color);
   border-radius: 5px;
   width: auto;
   min-width: 85%;
+  color: var(--text-color-on-background);
 }
 
 th, td {
@@ -489,7 +508,7 @@ tr:nth-child(even) {
 }
 
 .create-form input, .create-form select, .create-form textarea {
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .8);
+  box-shadow: 0 1px 2px 0 var(--shadow-color);
   width: 80%;
   display: block;
   margin: 20px;
