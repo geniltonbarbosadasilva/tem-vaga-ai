@@ -110,7 +110,6 @@ class Properties extends DataBase
     {
         try {
             [
-                "id" => $id,
                 "id_owner" => $id_owner,
                 "title" => $title,
                 "price" => $price,

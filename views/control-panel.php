@@ -45,6 +45,10 @@
                     $properties = new Properties();
                     $properties->table();
                     break;
+                case 'rent':
+                    $rents = new Rents();
+                    $rents->table();
+                    break;                    
                 default:
                     
                     break;

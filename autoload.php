@@ -1,5 +1,7 @@
 <?php
 
+define('PROJECT_DIRECTORY', __DIR__ . DIRECTORY_SEPARATOR);
+
 function autoLoadClasses( $className )
 {
     $extension =  spl_autoload_extensions();

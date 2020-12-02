@@ -12,9 +12,6 @@ switch ($_GET["table"]) {
     case "rents":
         $table = new Rents();
         break;
-    case "tokens":
-        $table = new Tokens();
-        break;
     default:
         exit("Falha na operação");
         break;
@@ -26,11 +23,11 @@ if ($_GET["operation"] === "delete") {
 }
 
 if ($_GET["operation"] === "update") {
-    $response = $table->update($_POST);
+    $response = $table->update($_POST, $_FILES);
     Utils::redirect_to("../views/control-panel.php", $response);
 }
 
 if ($_GET["operation"] === "create") {
-    $response = $table->create($_POST);
+    $response = $table->create($_POST, $_FILES);
     Utils::redirect_to("../views/control-panel.php", $response);
 }

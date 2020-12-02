@@ -36,3 +36,12 @@ CREATE TABLE Rents(
     FOREIGN KEY (id_user) REFERENCES Users(id),
     FOREIGN KEY (id_property) REFERENCES Properties(id)
 );
+
+CREATE TABLE Images(
+    id int NOT NULL UNIQUE AUTO_INCREMENT,
+    id_property int NOT NULL,
+    title varchar(50) NOT NULL,
+    src varchar(200) NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (id_property) REFERENCES Properties(id)
+);

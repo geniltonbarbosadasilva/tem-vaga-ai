@@ -12,61 +12,6 @@ class Tokens extends DataBase
         parent::__destruct();
     }
 
-    public function table()
-    {
-        try {
-            $sql = "SELECT * FROM Tokens";
-            $results = $this->getConnection()->query($sql);
-
-            if ($results->num_rows > 0) {
-                $deletePath = http_build_query([
-                    "operation" => "delete",
-                    "table" => "tokens"
-                ]);
-                echo
-                    "<table>
-                    <tr>
-                        <th>ID</th>
-                        <th>Nome</th>
-                        <th>E-mail</th>
-                        <th>Senha</th>
-                        <th></th>
-                        <th></th>
-                    </tr>";
-                while ($row = $results->fetch_assoc()) {
-                    [
-                        "id" => $id,
-                        "name" => $name,
-                        "email" => $email,
-                        "password" => $password
-                    ] = $row;
-                    echo
-                        "<tr>
-                            <td>$id</td>
-                            <td>$name</td>
-                            <td>$email</td>
-                            <td>$password</td>
-                            <td>
-                                <a href='create-token.php?id=$id'>
-                                    <i class=\"transition fa fa-pencil\"></i>
-                                </a>
-                            </td>
-                            <td>
-                                <a href='../app/controller.php?id=$id&$deletePath'>
-                                    <i class=\"transition fa fa-minus-circle\"></i>
-                                </a> 
-                            </td>
-                        </tr>";
-                }
-                echo "</table>";
-            } else {
-                echo "0 results";
-            }
-        } catch (\Throwable $th) {
-            echo 'Exceção capturada: ' . $th->getMessage() . "\n";
-        }
-    }
-
     public function delete($id)
     {
         try {
@@ -94,12 +39,13 @@ class Tokens extends DataBase
     public function create($token)
     {
         try {
-            $name = $token["name"];
-            $email = $token["email"];
-            $password =  $token["password"];
+            [
+                "id_user" => $id_user,
+                "code_hash" => $code_hash
+            ] = $token;
 
-            $sql = "INSERT INTO Tokens ( name, email, password)
-                    VALUES ('$name', '$email', '$password')";
+            $sql = "INSERT INTO Tokens ( id_user, code_hash)
+                    VALUES ( '$id_user', '$code_hash')";
             if ($this->getConnection()->query($sql) === TRUE) {
                 return [
                     "type" => "success",
@@ -124,12 +70,11 @@ class Tokens extends DataBase
         try {
             [
                 "id" => $id,
-                "name" => $name,
-                "email" => $email,
-                "password" => $password
+                "id_user" => $id_user,
+                "code_hash" => $code_hash
             ] = $record;
 
-            $sql = "UPDATE Tokens SET name='$name', email='$email', password='$password' WHERE id=$id";
+            $sql = "UPDATE Tokens SET id_user='$id_user', code_hash='$code_hash' WHERE id=$id";
 
             if ($this->getConnection()->query($sql) === TRUE) {
                 return [
@@ -157,15 +102,28 @@ class Tokens extends DataBase
             $results = $this->getConnection()->query($sql);
 
             if ($results->num_rows > 0) {
-                $result = $results->fetch_object();
-                return [
-                    "id" => $result->id,
-                    "name" => $result->name,
-                    "email" => $result->email,
-                    "password" => $result->password
-                ];
+                return $results->fetch_array(MYSQLI_ASSOC);
             } else {
                 echo "0 results";
+            }
+        } catch (\Throwable $th) {
+            return [
+                "type" => "fail",
+                "message" => "Exceção capturada: " . $th->getMessage()
+            ];
+        }
+    }
+
+    public function all()
+    {
+        try {
+            $sql = "SELECT * FROM Tokens";
+            $results = $this->getConnection()->query($sql);
+
+            if ($results->num_rows > 0) {
+                return $results->fetch_all(MYSQLI_ASSOC);
+            } else {
+                return [];
             }
         } catch (\Throwable $th) {
             return [

@@ -14,8 +14,6 @@ html, body {
   background-color: var(--background-color);
   font-family: 'Roboto Mono', monospace;
   font-size: 16px;
-  transition: 0.5s;
-  transition-timing-function: ease-in;
 }
 
 header {
@@ -525,7 +523,7 @@ td {
 }
 
 .create-form input, .create-form select, .create-form textarea {
-  box-shadow: 1px 1px 4px var(--shadow-color);
+  box-shadow: 1px 1px 4px var(--shadow-color-hover);
   width: 80%;
   display: block;
   margin: 20px;

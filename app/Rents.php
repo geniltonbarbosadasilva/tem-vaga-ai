@@ -23,17 +23,18 @@ class Rents extends DataBase
                     "operation" => "delete",
                     "table" => "rents"
                 ]);
-                $user = new Users();
+
+                $users = new Users();
+                $properties = new Properties();
 
                 echo
                     "<table>
                     <tr>
                         <th>ID</th>
-                        <th>Propietario</th>
-                        <th>Nome</th>
-                        <th>Preço</th>
-                        <th>Descriçao</th>
-                        <th>Endereço</th>
+                        <th>Usuario</th>
+                        <th>Imovel</th>
+                        <th>Entrada</th>
+                        <th>Saida</th>
                         <th></th>
                         <th></th>
                     </tr>";
@@ -41,23 +42,25 @@ class Rents extends DataBase
                 while ($row = $results->fetch_assoc()) {
                     [                         
                         "id" => $id,
-                        "id_owner" => $id_owner,
-                        "title" => $title,
-                        "price" => $price,
-                        "description" => $description,
-                        "address" => $address
+                        "id_user" => $id_user,
+                        "id_property" => $id_property,
+                        "check_in" => $check_in,
+                        "check_out" => $check_out
                     ] = $row;
-                    $owner = $user->getRecordById($id_owner);
-                    $owner_name = (array_key_exists("name", $owner))? $owner["name"] : "";
+                    
+                    $user = $users->getRecordById($id_user);
+                    $user_name = (array_key_exists("name", $user))? $user["name"] : "";
+
+                    $property = $properties->getRecordById($id_property);
+                    $property_name = (array_key_exists("title", $property))? $property["title"] : "";
 
                     echo
                         "<tr>
                             <td>$id</td>
-                            <td>$owner_name</td>
-                            <td>$title</td>
-                            <td>$price</td>
-                            <td>$description</td>
-                            <td>$address</td>
+                            <td>$user_name</td>
+                            <td>$property_name</td>
+                            <td>$check_in</td>
+                            <td>$check_out</td>
                             <td>
                                 <a href='create-rent.php?id=$id'>
                                     <i class=\"transition fa fa-pencil\"></i>
@@ -109,17 +112,15 @@ class Rents extends DataBase
     public function create($rent)
     {
         try {
-            [
-                "id" => $id,
-                "id_owner" => $id_owner,
-                "title" => $title,
-                "price" => $price,
-                "description" => $description,
-                "address" => $address
+            [                         
+                "id_user" => $id_user,
+                "id_property" => $id_property,
+                "check_in" => $check_in,
+                "check_out" => $check_out
             ] = $rent;                
 
-            $sql = "INSERT INTO Rents ( id_owner, title, price, description, address)
-                    VALUES ('$id_owner', '$title', '$price', '$description', '$address')";
+            $sql = "INSERT INTO Rents ( id_user, id_property, check_in, check_out)
+                    VALUES ( '$id_user', '$id_property', '$check_in', '$check_out')";
             if ($this->getConnection()->query($sql) === TRUE) {
                 return [
                     "type" => "success",
@@ -145,16 +146,15 @@ class Rents extends DataBase
     public function update($record)
     {
         try {
-            [
-                "id" => $id,
-                "id_owner" => $id_owner,
-                "title" => $title,
-                "price" => $price,
-                "description" => $description,
-                "address" => $address                
+            [   
+                "id" => $id,                      
+                "id_user" => $id_user,
+                "id_property" => $id_property,
+                "check_in" => $check_in,
+                "check_out" => $check_out
             ] = $record;                
 
-            $sql = "UPDATE Rents SET id_owner='$id_owner', title='$title', price='$price', description='$description', address='$address' WHERE id=$id";
+            $sql = "UPDATE Rents SET id_user='$id_user', id_property='$id_property', check_in='$check_in', check_out='$check_out' WHERE id=$id";
 
             if ($this->getConnection()->query($sql) === TRUE) {
                 return [

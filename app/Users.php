@@ -98,7 +98,6 @@ class Users extends DataBase
     {
         try {
             [
-                "id" => $id,
                 "name" => $name,
                 "email" => $email,
                 "password" => $password
