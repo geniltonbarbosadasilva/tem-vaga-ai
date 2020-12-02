@@ -12,10 +12,10 @@ function footer()
             <li><a href='#' class='fa fa-twitter transition'></a></li>
             <li><a href='#' class='fa fa-instagram transition'></a></li>
         </ul>
-		<a href='sobre.php'>Sobre o sistema</a>
-		<a href='home.php'>Início</a>
-
-
+        <ul>
+            <li><a href='about-us.php'>Sobre o sistema</a></li>
+            <li><a href='home.php'>Início</a></li>
+        </ul>		
     </footer>";
 }
 

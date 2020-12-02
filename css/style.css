@@ -14,6 +14,8 @@ html, body {
   background-color: var(--background-color);
   font-family: 'Roboto Mono', monospace;
   font-size: 16px;
+  transition: 0.5s;
+  transition-timing-function: ease-in;
 }
 
 header {
@@ -47,6 +49,8 @@ a {
 
 .logo {
   max-width: 200px;
+  transition: 0.4s;
+  transition-timing-function: linear;
 }
 
 .logo img {
@@ -367,7 +371,7 @@ main {
 
 footer {
   position: sticky;
-  z-index: 1;
+  z-index: 0;
   padding-top: 2rem;
   padding-bottom: 2rem;
   width: 100%;
@@ -491,15 +495,28 @@ table {
   color: var(--text-color-on-background);
 }
 
+tr:nth-child(odd) {
+  background-color: var(--main-color);
+  color: var(--text-color);
+}
+
 th, td {
   text-align: left;
   padding: 8px 16px;
   white-space: normal;
 }
 
-tr:nth-child(even) {
-  background-color: var(--main-color);
-  color: var(--text-color);
+th {
+  background-color: var(--background-color);
+  color: var(--text-color-on-background);
+  border-bottom: 2px solid var(--shadow-color-hover);
+  font-size: 1em;
+  font-weight: bold;
+}
+
+td {
+  font-size: 0.8em;
+  font-weight: lighter;
 }
 
 .create-form {
