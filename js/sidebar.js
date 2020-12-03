@@ -25,8 +25,8 @@ switch (urlParams.get('table')) {
     case "rent":
         document.getElementById("rent").classList.add("negative");
         break;
-    case "token":
-        document.getElementById("token").classList.add("negative");
+    case "import":
+        document.getElementById("import").classList.add("negative");
         break;
     default:
         document.getElementById("user").classList.add("negative");

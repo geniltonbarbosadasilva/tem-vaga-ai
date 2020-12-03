@@ -8,7 +8,7 @@ function sidebar()
         <a id='user' href='control-panel.php?table=user' class='bar-item bar-button'>Usuarios</a>
         <a id='property' href='control-panel.php?table=property' class='bar-item bar-button'>Imoveis</a>
         <a id='rent' href='control-panel.php?table=rent' class='bar-item bar-button'>Alugueis</a>
-        <a href='import-data.php' class='bar-item bar-button'>Importar Usuários</a>
+        <a id='import' href='control-panel.php?table=import' class='bar-item bar-button'>Importar Dados</a>
     </div>
 
     <div id='openNav' class='closed-bar'>
