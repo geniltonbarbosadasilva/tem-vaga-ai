@@ -9,7 +9,12 @@ $tokens = new Tokens();
 $images = new Images();
 
 echo "<pre>";
-print_r([
+print_r(
+    $images->getLastId()
+);
+echo "</pre>";
+
+
     // $images->create([
     //     "id" => 1,
     //     "id_property" => 1,
@@ -25,8 +30,7 @@ print_r([
     // ]),
     // $images->all(),
     // $images->delete(4)
-]);
-echo "</pre>";
+
 
     // $tokens->create([
     //     "id" => 2,

@@ -46,7 +46,7 @@
         			<div class='card'>
             			<img src='../$img'>
             			<h1 class='dark-text'>$title</h1>
-            			<p class='green-text'>$price</p>
+            			<p class='green-text'>R$ $price/noite</p>
             			<p class='card-text transition'>$description</p>
         			</div>
     			</div>";

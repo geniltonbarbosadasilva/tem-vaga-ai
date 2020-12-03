@@ -43,7 +43,7 @@ class Images extends DataBase
     {
         try {
             foreach ($imgs as $img) {
-                $response = $this->store( $img, $this->getConnection()->insert_id );
+                $response = $this->store( $img, $this->getLastId() );
                 if( $response["type"] == "success" ){
                     $response = $this->create([
                         "id_property" => $id_property,
@@ -150,6 +150,23 @@ class Images extends DataBase
                 "message" => "Exceção capturada: " . $th->getMessage(),
                 "table" => "image"
             ];
+        }
+    }
+
+    public function getLastId()
+    {
+        try {
+            $sql = "SELECT * FROM Images ORDER BY id DESC LIMIT 1";
+            $results = $this->getConnection()->query($sql);
+
+            if ($results->num_rows > 0) {
+                [ "id" => $id ] = $results->fetch_array(MYSQLI_ASSOC);
+                return $id;
+            } else {
+                return 0;
+            }
+        } catch (\Throwable $th) {
+            return -1;
         }
     }
 
