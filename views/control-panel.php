@@ -60,11 +60,11 @@ require_once("../autoload.php");
                 "<form class='create-form' enctype='multipart/form-data' action='../app/storeCSV.php' method='post'>
                     <label>Table:</label>
                     <select name='table'>    
-                        <option value='Users'>Users</option>                
-                        <option value='Property'>Property</option>
-                        <option value='Rents'>Rents</option>
-                        <option value='Images'>Images</option>
-                        <option value='Tokens'>Tokens</option>
+                        <option value='users'>Users</option>                
+                        <option value='property'>Property</option>
+                        <option value='rents'>Rents</option>
+                        <option value='images'>Images</option>
+                        <option value='tokens'>Tokens</option>
                     </select>
                     <label>Arquivo CSV:</label>
                     <input accept='.csv' type='file' class='custom-file-input' id='customFile' name='file'>
