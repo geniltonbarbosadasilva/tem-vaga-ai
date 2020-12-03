@@ -3,7 +3,7 @@
 require_once "../autoload.php";
 
 echo "<pre>";
-print_r(Images::store($_FILES, "Teste"));
+print_r(Images::store($_FILES["upload-images"], "1"));
 echo "</pre>";
 
 // $target_dir = PROJECT_DIRECTORY . "storage/img/";

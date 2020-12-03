@@ -75,7 +75,7 @@ class Rents extends DataBase
                 }
                 echo "</table>";
             } else {
-                echo "<p>0 results</p>";
+                echo "0 results";
             }
         } catch (\Throwable $th) {
             echo 'Exceção capturada: ' . $th->getMessage() . "\n";

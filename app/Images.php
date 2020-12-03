@@ -39,6 +39,33 @@ class Images extends DataBase
         }
     }
 
+    public function updateImages( $id_property, $imgs)
+    {
+        try {
+            foreach ($imgs as $img) {
+                $response = $this->store( $img, $this->getConnection()->insert_id );
+                if( $response["type"] == "success" ){
+                    $response = $this->create([
+                        "id_property" => $id_property,
+                        "title" => "image",
+                        "src" => $response["src"]
+                    ]);
+                    if( $response["type"] == "fail" ){
+                        return $response;
+                    }
+                } else {
+                    return $response;
+                }
+            }
+        } catch (\Throwable $th) {
+            return [
+                "type" => "fail",
+                "message" => "Exceção capturada: " . $th->getMessage(),
+                "table" => "image"
+            ];
+        }
+    }    
+
     public function create($image)
     {
         try {
@@ -106,6 +133,26 @@ class Images extends DataBase
         }
     }
 
+    public function getImagesByOwnerId( $id_property )
+    {
+        try {
+            $sql = "SELECT * FROM Images WHERE id_property=$id_property";
+            $results = $this->getConnection()->query($sql);
+
+            if ($results->num_rows > 0) {
+                return $results->fetch_all(MYSQLI_ASSOC);
+            } else {
+                return [];
+            }
+        } catch (\Throwable $th) {
+            return [
+                "type" => "fail",
+                "message" => "Exceção capturada: " . $th->getMessage(),
+                "table" => "image"
+            ];
+        }
+    }
+
     public function getRecordById($id)
     {
         try {
@@ -148,15 +195,18 @@ class Images extends DataBase
 
     public function store($file, $name)
     {
+        echo "<pre>";
+        print_r($file);
+        echo "</pre>";
         try {            
             $imageFileType = 
                 strtolower(
-                    pathinfo(basename($file["upload-images"]["name"]), PATHINFO_EXTENSION)
+                    pathinfo(basename($file["name"]), PATHINFO_EXTENSION)
                 );
             $directory = PROJECT_DIRECTORY . "storage/img-$name.$imageFileType";
 
             // Check if image file is a actual image or fake image    
-            if ( getimagesize( $file["upload-images"]["tmp_name"] ) === false ) {
+            if ( getimagesize( $file["tmp_name"] ) === false ) {
                 return [
                     "type" => "fail",
                     "message" => "O arquivo não é uma imagem.",
@@ -165,7 +215,7 @@ class Images extends DataBase
             }
 
             // Check file size
-            if ($file["upload-images"]["size"] > 500000) {
+            if ($file["size"] > 500000) {
                 return [
                     "type" => "fail",
                     "message" => "O arquivo é muito grande.",
@@ -176,7 +226,7 @@ class Images extends DataBase
             // Allow certain file formats
             if (
                 $imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-                && $imageFileType != "gif"
+                && $imageFileType != "gif" && $imageFileType != "webp"
             ) {
                 return [
                     "type" => "fail",
@@ -185,11 +235,12 @@ class Images extends DataBase
                 ];
             }
 
-            if (move_uploaded_file($file["upload-images"]["tmp_name"], $directory)) {
+            if (move_uploaded_file($file["tmp_name"], $directory)) {
                 return [
                     "type" => "success",
                     "message" => "O arquivo foi carregado.",
-                    "table" => "image"
+                    "table" => "image",
+                    "src" => "storage/img-$name.$imageFileType"
                 ];
             } else {
                 return [

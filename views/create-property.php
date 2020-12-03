@@ -43,7 +43,7 @@
             $action = "../app/controller.php?id=$id&operation=update&table=properties";
         }
         ?>
-        <form class="create-form" action="<?php echo $action ?>" method="post">
+        <form class="create-form" action="<?php echo $action ?>" method="post" enctype="multipart/form-data">
             <input type="hidden" name="id" value="<?php echo $id ?>">
 
             <label for="id_owner">Proprietario:</label>
@@ -68,6 +68,11 @@
 
             <label for="address">Endereço:</label>
             <input id="address" type="text" name="address" value="<?php echo $address ?>">
+
+            <label for="image-1">Imagens:</label>
+            <input type="file" name="image-1" id="image-1">
+            <input type="file" name="image-2" id="image-2">
+            <input type="file" name="image-3" id="image-3">
 
             <button class='search-btn transition' type="submit">Enviar</button>
         </form>

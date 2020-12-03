@@ -72,7 +72,7 @@ class Properties extends DataBase
                 }
                 echo "</table>";
             } else {
-                echo "<p>0 results</p>";
+                echo "0 results";
             }
         } catch (\Throwable $th) {
             echo 'Exceção capturada: ' . $th->getMessage() . "\n";
@@ -106,7 +106,7 @@ class Properties extends DataBase
         }
     }
 
-    public function create($property)
+    public function create($property, $imgs)
     {
         try {
             [
@@ -119,7 +119,16 @@ class Properties extends DataBase
 
             $sql = "INSERT INTO Properties ( id_owner, title, price, description, address)
                     VALUES ('$id_owner', '$title', '$price', '$description', '$address')";
+                        
             if ($this->getConnection()->query($sql) === TRUE) {
+     
+                $images = new Images();
+                $response = $images->updateImages( $this->getConnection()->insert_id, $imgs);
+                if( $response["type"] == "fail" ){
+                    $response["table"] = "property";
+                    return $response;
+                }
+
                 return [
                     "type" => "success",
                     "message" => "Novo registro criado com sucesso",
