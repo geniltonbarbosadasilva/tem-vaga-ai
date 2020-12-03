@@ -39,7 +39,7 @@ class Images extends DataBase
         }
     }
 
-    public function updateImages( $id_property, $imgs)
+    public function uploadImages( $id_property, $imgs)
     {
         try {
             foreach ($imgs as $img) {
@@ -57,6 +57,11 @@ class Images extends DataBase
                     return $response;
                 }
             }
+            return [
+                "type" => "success",
+                "message" => "Amazenadas com sucesso",
+                "table" => "image"
+            ];
         } catch (\Throwable $th) {
             return [
                 "type" => "fail",
@@ -212,15 +217,18 @@ class Images extends DataBase
 
     public function store($file, $name)
     {
-        echo "<pre>";
-        print_r($file);
-        echo "</pre>";
         try {            
             $imageFileType = 
                 strtolower(
                     pathinfo(basename($file["name"]), PATHINFO_EXTENSION)
                 );
             $directory = PROJECT_DIRECTORY . "storage/img-$name.$imageFileType";
+
+            if(!is_dir(PROJECT_DIRECTORY . "storage/")){                
+                $oldmask = umask(0);
+                mkdir(PROJECT_DIRECTORY . "storage/", 0777, true);
+                umask($oldmask);
+            }
 
             // Check if image file is a actual image or fake image    
             if ( getimagesize( $file["tmp_name"] ) === false ) {

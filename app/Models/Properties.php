@@ -123,7 +123,7 @@ class Properties extends DataBase
             if ($this->getConnection()->query($sql) === TRUE) {
      
                 $images = new Images();
-                $response = $images->updateImages( $this->getConnection()->insert_id, $imgs);
+                $response = $images->uploadImages( $this->getConnection()->insert_id, $imgs);
                 if( $response["type"] == "fail" ){
                     $response["table"] = "property";
                     return $response;
