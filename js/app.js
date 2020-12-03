@@ -1,3 +1,6 @@
+//  Esse arquivo era utilizado anteriormente para carregar a página de resultados,
+//  Depois que essa função passou a ser feita em php, ele deixou de ser usado.
+
 function makeCard( { id, img_urls, title, price, description } ) {
     return `<div id="${id}" class="item transition">
         <div class="card">

@@ -529,3 +529,7 @@ td {
   display: block;
   margin: 20px;
 }
+
+.preview-img {
+  max-width: 300px;
+}

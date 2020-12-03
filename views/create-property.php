@@ -70,10 +70,20 @@
             <input id="address" type="text" name="address" value="<?php echo $address ?>">
 
             <label for="image-1">Imagens:</label>
-            <input type="file" name="image-1" id="image-1">
-            <input type="file" name="image-2" id="image-2">
-            <input type="file" name="image-3" id="image-3">
-
+            <div class="grid-container">
+                <span>
+                    <input type="file" name="image-1" id="selector-image-1" accept="image/*">
+                    <img class="preview-img" id="preview-img-1">
+                </span>
+                <span>
+                    <input type="file" name="image-2" id="selector-image-2" accept="image/*">
+                    <img class="preview-img" id="preview-img-2">
+                </span>
+                <span>
+                    <input type="file" name="image-3" id="selector-image-3" accept="image/*">
+                    <img class="preview-img" id="preview-img-3">
+                </span>
+            </div>
             <button class='search-btn transition' type="submit">Enviar</button>
         </form>
     </main>
@@ -85,6 +95,7 @@
     <script src="../js/animation.js"></script>
     <script src="../js/app.js"></script>
     <script src="../js/slide.js"></script>
+    <script src="../js/preview_img.js"></script>
 </body>
 
 </html>
