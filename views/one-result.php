@@ -1,3 +1,4 @@
+<?php require_once("../autoload.php"); ?>
 <!doctype html>
 <html lang="pt-br">
 
@@ -18,20 +19,42 @@
     ?>
     <main>
         <div class="container">
-            <div class="content-view">
+            <div class="content-view">            
                 <?php
                 include 'views-parts/slider.php';
 
-                slider();
-                ?>
-                <div class="item-view">
-                    <h1 class="dark-text title" id="title"></h1>
-                    <p class="green-text" id="price"></p>
-                    <p id="desc" class="text"></p>
-                    <p id="address" class="text"></p>
-                    <button class="search-btn transition" type="button">Fechar Negócio!</button>
-                </div>
+                $properties = new Properties();
+			    $property = $properties->getRecordById($_GET["id"]);
+                $images = new Images();
 
+                [					
+					"id" => $id,
+                	"title" => $title,
+                	"price" => $price,
+                    "description" => $description,
+                    "address" => $address
+                ] = $property;                
+                $imgs = $images->getImagesByOwnerId($id);
+                
+                if ( !empty($imgs) ) {
+                    $sliders = [ '', '', ''];
+                    foreach ($imgs as $key => $img) {
+                        $sliders[$key] = 
+                            ( array_key_exists ( "src" , $img) )? "../" . $img["src"] : "";    
+                    }
+                    slider($sliders);
+                }                
+
+                echo 
+				"<div class='item-view'>
+                    <h1 class='dark-text title'>$title</h1>
+                    <p class='green-text'>$price</p>
+                    <p class='text'>$description</p>
+                    <p class='text'>$address</p>
+                    <button class='search-btn transition' type='button'>Fechar Negócio!</button>
+                </div>";
+                            
+                ?>
             </div>
         </div>
     </main>

@@ -66,8 +66,8 @@ function oneResultLoader(path) {
     xhttp.send();
 }
 
-function redirect() {
-    window.location.href = "one-result.php?" + this.id; 
+function redirect(element) {
+    window.location.href = "one-result.php?id=" + element.id; 
 }
 
 function openLink(link) {
@@ -82,4 +82,4 @@ function closeModal() {
     document.getElementById("id-modal").style.display="none";
 }
 
-window.onload = function () { loadContent() }
+// window.onload = function () { loadContent() }

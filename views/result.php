@@ -26,10 +26,6 @@
 			$properties = new Properties();
 			$properties = $properties->all();
 			$images = new Images();
-
-			// echo "<pre>";
-			// print_r($images->getImagesByOwnerId(10));
-			// echo "</pre>";
 			
 			foreach ( $properties as $property ) {
 				[					
@@ -42,7 +38,7 @@
 				$img = ( !empty($img) && array_key_exists ( "src" , $img[0]) )? $img[0]["src"] : "";
 
 				echo 
-				"<div id='$id' class='item transition'>
+				"<div id='$id' class='item transition' onclick='redirect(this)'>
         			<div class='card'>
             			<img src='../$img'>
             			<h1 class='dark-text'>$title</h1>
@@ -62,7 +58,7 @@
 	?>
 	<script src="../js/animation.js"></script>
 	<!-- Preenche a pagina com JavaScript -->
-	<!-- <script src="../js/app.js"></script>  -->
+	<script src="../js/app.js"></script> 
 	<script src="../js/slide.js"></script>
 </body>
 
