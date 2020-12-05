@@ -230,20 +230,20 @@ class Images extends DataBase
                 umask($oldmask);
             }
 
-            // Check if image file is a actual image or fake image    
-            if ( getimagesize( $file["tmp_name"] ) === false ) {
-                return [
-                    "type" => "fail",
-                    "message" => "O arquivo não é uma imagem.",
-                    "table" => "image"
-                ];
-            }
-
             // Check file size
             if ($file["size"] > 500000) {
                 return [
                     "type" => "fail",
                     "message" => "O arquivo é muito grande.",
+                    "table" => "image"
+                ];
+            }
+
+            // Check if image file is a actual image or fake image    
+            if ( getimagesize( $file["tmp_name"] ) === false ) {
+                return [
+                    "type" => "fail",
+                    "message" => "Imagen inválido",
                     "table" => "image"
                 ];
             }

@@ -1,5 +1,19 @@
 <?php
 
+require_once("../autoload.php");
+
+function dropDown()
+{
+    $csv = CSV::getCSV(PROJECT_DIRECTORY . "CSV/citys.csv");
+    $citys = "";
+
+    foreach ($csv as $city) {
+        $citys = $citys . "<a onclick='fillField(this)'>$city</a>";
+    }
+
+    return $citys;
+}
+
 function loginScreen()
 {
     return
@@ -50,6 +64,7 @@ function headerHome()
 function headerResult()
 {
     $loginScreen = loginScreen();
+    $dropDown = dropDown();
     echo 
     "<header>
         <div class='navbar'>
@@ -61,10 +76,7 @@ function headerResult()
                     <div class='dropdown'>
                     <input id='search-local' type='text' name='fname' placeholder='Para onde?'>
                     <div class='dropdown-content'>
-                        <a onclick='fillField(this)'>Belo Horizonte</a>
-                        <a onclick='fillField(this)'>Montes Claros</a>
-                        <a onclick='fillField(this)'>Ouro Preto</a>
-                        <a onclick='fillField(this)'>Vitoria da Conquista</a>
+                        $dropDown
                     </div>
                     </div>
                     <input type='number' name='fname' placeholder='quantas pessoas?'>

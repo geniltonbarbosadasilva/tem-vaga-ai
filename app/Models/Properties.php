@@ -82,6 +82,13 @@ class Properties extends DataBase
     public function delete($id)
     {
         try {
+            $images = new Images();
+            $imgs= $images->getImagesByOwnerId($id);
+
+            foreach ($imgs as $img) {
+                $images->delete($img["id"]);
+            }
+
             $sql = "DELETE FROM Properties WHERE id=$id";
 
             if ($this->getConnection()->query($sql) === TRUE) {

@@ -41,10 +41,9 @@
                     <div class="dropdown">
                         <input id="search-local" type="text" name="fname" placeholder="Para onde?">
                         <div class="dropdown-content">
-                            <a onclick="fillField(this)">Belo Horizonte</a>
-                            <a onclick="fillField(this)">Montes Claros</a>
-                            <a onclick="fillField(this)">Ouro Preto</a>
-                            <a onclick="fillField(this)">Vitoria da Conquista</a>
+                            <?php
+                            echo dropDown();
+                            ?>
                         </div>
                     </div>
                     <input type="number" name="fname" placeholder="quantas pessoas?">

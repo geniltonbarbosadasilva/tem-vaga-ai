@@ -2,20 +2,6 @@
 
 require_once("../autoload.php");
 
-function getCSV($name)
-{
-    $file = fopen($name, "r");
-    $result = array();
-    $i = 0;
-    while (!feof($file)) :
-        if (substr(($result[$i] = fgets($file)), 0, 10) !== ';;;;;;;;') :
-            $i++;
-        endif;
-    endwhile;
-    fclose($file);
-    return $result;
-}
-
 try {
     switch ($_POST["table"]) {
         case "users":
@@ -47,7 +33,7 @@ try {
         array_key_exists("tmp_name", $_FILES["file"]) &&
         !empty($_FILES["file"]["tmp_name"])
     ) {
-        $file_csv = getCSV($_FILES["file"]["tmp_name"]);
+        $file_csv = CSV::getCSV($_FILES["file"]["tmp_name"]);
         $header = str_getcsv($file_csv[0]);
         $length_header = count($header);
 
