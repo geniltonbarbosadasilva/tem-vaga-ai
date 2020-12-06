@@ -38,19 +38,22 @@
                 $action = "../app/controller.php?id=$id&operation=update&table=users";
             }   
         ?>
-        <form class="create-form" action="<?php echo $action ?>" method="post">
+        <form id="form-user" class="create-form" action="<?php echo $action ?>" method="post">
             <input type="hidden" name="id" value="<?php echo $id ?>">
 
             <label for="name">Nome:</label>
+            <label id="error-name" for="name" class="error"></label>
             <input id="name" type="text" name="name" value="<?php echo $name ?>">
-
+            
             <label for="email">E-mail:</label>
+            <label id="error-email" for="email" class="error"></label>
             <input id="email" type="text" name="email" value="<?php echo $email ?>">
 
             <label for="password">Senha:</label>
+            <label id="error-password" for="password" class="error"></label>
             <input id="password" type="password" name="password" value="<?php echo $password ?>">
 
-            <button class='search-btn transition' type="submit">Enviar</button>
+            <button class='search-btn transition' type="button" onclick="submitFormUser()">Enviar</button>
         </form>
     </main>
 
@@ -61,6 +64,7 @@
     <script src="../js/animation.js"></script>
     <script src="../js/app.js"></script>
     <script src="../js/slide.js"></script>
+    <script src="../js/validation.js"></script>
 </body>
 
 </html>

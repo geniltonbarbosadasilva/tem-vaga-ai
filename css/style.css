@@ -535,3 +535,23 @@ td {
 .preview-img {
   max-width: 300px;
 }
+
+.error {
+  background-color: rgb(240, 110, 110);
+  color: var(--text-color);
+  display: none;
+  box-shadow: 0 2px 5px 0 var(--shadow-color);
+  border-radius: 5px;
+  padding: 8px;
+  font-size: 0.8em;
+  animation: emerge 1s linear;
+}
+
+@keyframes emerge {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

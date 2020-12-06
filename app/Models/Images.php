@@ -3,8 +3,8 @@
 class Images extends DataBase
 {
     private static $message = [                        
-        1 => "O arquivo enviado excede o limite de tamanho.",
-        2 => "O arquivo enviado excede o limite de tamanho.",
+        1 => "A imagem enviada excede o limite de tamanho.",
+        2 => "A imagem enviada excede o limite de tamanho.",
         3 => "O upload do arquivo foi feito parcialmente.",
         4 => "Nenhum arquivo foi enviado.",
         6 => "Pasta temporária ausênte.",
@@ -265,7 +265,7 @@ class Images extends DataBase
             if ($file["size"] > 500000) {
                 return [
                     "type" => "fail",
-                    "message" => "O arquivo é muito grande.",
+                    "message" => "A imagem é muito grande.",
                     "table" => "image"
                 ];
             }
@@ -294,7 +294,7 @@ class Images extends DataBase
             if (move_uploaded_file($file["tmp_name"], $directory)) {
                 return [
                     "type" => "success",
-                    "message" => "O arquivo foi carregado.",
+                    "message" => "A imagem foi carregado.",
                     "table" => "image",
                     "src" => "storage/img-$name.$imageFileType"
                 ];

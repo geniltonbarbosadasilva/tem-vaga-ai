@@ -14,7 +14,7 @@ class Validation {
                 foreach ( $requires as $require) {
                     switch ( $require ) {
                         case 'require':
-                            if ( empty($attribute) ) {
+                            if ( empty(trim($attribute)) ) {
                                 Validation::$MESSAGE = "O atributo $key não pode ser vazio.";
                                 return false;
                             }
