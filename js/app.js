@@ -84,7 +84,11 @@ function openUserModal() {
 }
 
 function closeModal() {
-    document.getElementById("id-user-modal").style.display="none";
+    let modals = document.getElementsByClassName('modal');
+
+    for (const modal of modals) {
+        modal.style.display="none";   
+    }    
 }
 
 // window.onload = function () { loadContent() }

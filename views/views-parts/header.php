@@ -26,6 +26,8 @@ function userScreen()
                         <label id='name-user-modal'></label>
                         <br><br>
                         <button class='search-btn transition' type='submit'>Sair</button>
+                        <br>
+                        <button onclick='closeModal()' class='search-btn transition' type='button'>Fechar</button>                                            
                     </form>
                 </div>
             </div>
@@ -48,6 +50,8 @@ function loginScreen()
                         <input id='checkbox' type='checkbox' name='conected' checked>
                         <label for='checkbox'>Mantanha-me Conectado</label>
                         <button class='search-btn transition' type='submit'>Entrar</button>
+                        <br>
+                        <button onclick='closeModal()' class='search-btn transition' type='button'>Fechar</button>
                     </form>
                 </div>
             </div>
