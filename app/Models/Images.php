@@ -46,25 +46,19 @@ class Images extends DataBase
     {
         try {
             foreach ($imgs as $img) {
-                $response = $this->create([
-                    "id_property" => $id_property,
-                    "title" => "image",
-                    "src" => ""
-                ]);
+                $response = $this->store( $img, $this->getLastId() );
                 if( $response["type"] == "success" ){
-                    $response = $this->store( $img, $this->getLastId() );
-                    if( $response["type"] == "success" ){
-                        $response = $this->update([
-                            "id" => $this->getConnection()->insert_id,
-                            "id_property" => $id_property,
-                            "title" => "image",
-                            "src" => $response["src"]
-                        ]);
+                    $response = $this->create([
+                        "id_property" => $id_property,
+                        "title" => "image",
+                        "src" => $response["src"]
+                    ]);
+                    if( $response["type"] == "fail" ){
                         return $response;
                     }
                 } else {
                     return $response;
-                }                
+                }
             }
             return [
                 "type" => "success",
