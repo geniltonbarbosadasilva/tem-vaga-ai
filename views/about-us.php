@@ -29,21 +29,21 @@
                 Sistema desenvolvido pelos alunos:
 				<ul>
 					<li>Marcos Aurélio Duarte Souza - 5165 | Integral</li>
-					<li>Genilton Barbosa - XXX | Integral</li>
-					<li>Vinicius - XXX | Noturno</li>
+					<li>Genilton Barbosa da Silva - 5153 | Integral</li>
+					<li>Vinicius Hideyuki Ikehara - 5191 | Noturno</li>
 				</ul> 
-				Funcionalidades:
+				Funcionalidades gerais:
 				<ol>
-					<li>Cadastrar, editar e excluir usuários, imoveis</li>
-					<li>Buscar vagas por cidade e data</li>
-					<li>Formulário de Contato com anfitrião</li>
+					<li>Cadastrar, editar e excluir usuários e imoveis</li>
+					<li>Buscar vagas por cidade</li>
+					<li>Registro e controle das reservas pelo painel de controle</li>
 				</ol>
 			</h3>
 
             <div class="item transition">
                 <div class="form-search-home" >
-                    <h1>Conheça sobre o sistema</h1>
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/2VpnnZk68gA" frameborder="0" 
+                    <h1>Conheça o sistema</h1>
+                    <iframe width="540" height="315" src="https://www.youtube.com/embed/7IE2TWj7Ahs" frameborder="0" 
 					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                    
                 </div>
