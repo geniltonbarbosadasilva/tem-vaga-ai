@@ -15,6 +15,3 @@ echo "
     alert(\"Negócio Fechado!\");    
     javascript:history.go(-1);
 </script>";
-
-
-?>

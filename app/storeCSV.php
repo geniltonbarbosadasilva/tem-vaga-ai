@@ -63,10 +63,11 @@ try {
             }
 
             $response = $table->create($insert);
-            if ($response["type"]  == "fail") {
-                $response["table"] = "import";
-                Utils::redirect_to("../views/control-panel.php", $response);
-            }
+        }
+
+        if ($response["type"]  == "fail") {
+            $response["table"] = "import";
+            Utils::redirect_to("../views/control-panel.php", $response);
         }
 
         Utils::redirect_to("../views/control-panel.php", [

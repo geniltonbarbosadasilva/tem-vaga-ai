@@ -189,7 +189,7 @@ class Rents extends DataBase
             if ($this->getConnection()->query($sql) === TRUE) {
                 return [
                     "type" => "success",
-                    "message" => "Registro atualizado com sucesso",
+                    "message" => "Diaria Fechada com sucesso!",
                     "table" => "rent"
                 ];
             } else {

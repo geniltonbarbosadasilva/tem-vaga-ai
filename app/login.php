@@ -27,4 +27,3 @@ if ($result->num_rows > 0) {
         javascript:history.go(-1);
     </script>";
 }
-?>

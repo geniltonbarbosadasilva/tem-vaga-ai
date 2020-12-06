@@ -22,30 +22,38 @@
 		<div class="container">
 			<div id="content-grid" class="grid-container">
 			<?php
-
+			
 			$properties = new Properties();
 			$properties = $properties->all();
 			$images = new Images();
+			$where = "";
+
+			if ($_GET["where"]) {
+				$where = strtolower(trim($_GET["where"]));
+			}
 			
 			foreach ( $properties as $property ) {
-				[					
-					"id" => $id,
-                	"title" => $title,
-                	"price" => $price,
-                	"description" => $description
-				] = $property;
-				$img = $images->getImagesByOwnerId($id);
-				$img = ( !empty($img) && array_key_exists ( "src" , $img[0]) )? $img[0]["src"] : "";
-
-				echo 
-				"<div id='$id' class='item transition' onclick='redirect(this)'>
-        			<div class='card'>
-            			<img src='../$img'>
-            			<h1 class='dark-text'>$title</h1>
-            			<p class='green-text'>R$ $price/noite</p>
-            			<p class='card-text transition'>$description</p>
-        			</div>
-    			</div>";
+				$address = strtolower(trim($property["address"]));
+				if ( $where != "" && strpos( $address, $where ) !== false ) {
+					[					
+						"id" => $id,
+						"title" => $title,
+						"price" => $price,
+						"description" => $description
+					] = $property;
+					$img = $images->getImagesByOwnerId($id);
+					$img = ( !empty($img) && array_key_exists ( "src" , $img[0]) )? $img[0]["src"] : "";
+	
+					echo 
+					"<div id='$id' class='item transition' onclick='redirect(this)'>
+						<div class='card'>
+							<img src='../$img'>
+							<h1 class='dark-text'>$title</h1>
+							<p class='green-text'>R$ $price/noite</p>
+							<p class='card-text transition'>$description</p>
+						</div>
+					</div>";						
+				}
 			}
 
 			?>

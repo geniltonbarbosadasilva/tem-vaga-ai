@@ -71,18 +71,18 @@ function headerResult()
             <div class='logo transition' id='logo'>
                 <a href='home.php'><img src='../img/logo.png' alt='logo'></a>
             </div>
-            <div>
-                <form autocomplete='off' class='form-search'>
+            <div>                    
+                <form autocomplete='off' class='form-search'  action='result.php' method='get'>
                     <div class='dropdown'>
-                    <input id='search-local' type='text' name='fname' placeholder='Para onde?'>
+                    <input id='search-local' type='text' name='where' placeholder='Para onde?'>
                     <div class='dropdown-content'>
                         $dropDown
                     </div>
                     </div>
-                    <input type='number' name='fname' placeholder='quantas pessoas?'>
-                    <input type='date' name='fname' placeholder='quando?'>
+                    <input type='number' name='number' placeholder='quantas pessoas?'>
+                    <input type='date'   name='date'  placeholder='quando?'>
 
-                    <button onclick=\"openLink('result.php')\" type='button' class='search-btn transition'>Buscar</button>                    
+                    <button type='submit' class='search-btn transition'>Buscar</button>                    
                 </form>                        
                 <i class='transition fa fa-adjust' onclick='setTheme()'></i>
             </div>

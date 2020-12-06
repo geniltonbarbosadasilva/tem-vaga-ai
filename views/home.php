@@ -36,18 +36,18 @@
                 </h3>
             </div>
             <div class="item transition">
-                <form autocomplete="off" class="form-search-home" action="result.php">
+                <form autocomplete="off" class="form-search-home" action="result.php" method="get">
                     <h1>Para onde vamos hoje?</h1>
                     <div class="dropdown">
-                        <input id="search-local" type="text" name="fname" placeholder="Para onde?">
+                        <input id="search-local" type="text" name="where" placeholder="Para onde?">
                         <div class="dropdown-content">
                             <?php
                             echo dropDown();
                             ?>
                         </div>
                     </div>
-                    <input type="number" name="fname" placeholder="quantas pessoas?">
-                    <input type="date" name="fname" placeholder="quando?">
+                    <input type="number" name="number" placeholder="quantas pessoas?">
+                    <input type="date" name="date" placeholder="quando?">
 
                     <button type="submit" class="search-btn transition">Buscar</button>
                 </form>
