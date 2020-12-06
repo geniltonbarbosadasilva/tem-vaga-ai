@@ -9,9 +9,7 @@ $tokens = new Tokens();
 $images = new Images();
 
 echo "<pre>";
-print_r(
-    $images->getLastId()
-);
+print_r($images->getRecordById(8)["src"]);
 echo "</pre>";
 
 

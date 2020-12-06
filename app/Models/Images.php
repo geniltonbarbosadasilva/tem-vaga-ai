@@ -14,7 +14,10 @@ class Images extends DataBase
 
     public function delete($id)
     {
-        try {
+        try {            
+            if ($image = $this->getRecordById($id)) {                
+                unlink(PROJECT_DIRECTORY . $image["src"]);
+            }
             $sql = "DELETE FROM Images WHERE id=$id";
 
             if ($this->getConnection()->query($sql) === TRUE) {
@@ -43,19 +46,25 @@ class Images extends DataBase
     {
         try {
             foreach ($imgs as $img) {
-                $response = $this->store( $img, $this->getLastId() );
+                $response = $this->create([
+                    "id_property" => $id_property,
+                    "title" => "image",
+                    "src" => ""
+                ]);
                 if( $response["type"] == "success" ){
-                    $response = $this->create([
-                        "id_property" => $id_property,
-                        "title" => "image",
-                        "src" => $response["src"]
-                    ]);
-                    if( $response["type"] == "fail" ){
+                    $response = $this->store( $img, $this->getLastId() );
+                    if( $response["type"] == "success" ){
+                        $response = $this->update([
+                            "id" => $this->getConnection()->insert_id,
+                            "id_property" => $id_property,
+                            "title" => "image",
+                            "src" => $response["src"]
+                        ]);
                         return $response;
                     }
                 } else {
                     return $response;
-                }
+                }                
             }
             return [
                 "type" => "success",
@@ -184,7 +193,7 @@ class Images extends DataBase
             if ($results->num_rows > 0) {
                 return $results->fetch_array(MYSQLI_ASSOC);
             } else {
-                echo "0 results";
+                return false;
             }
         } catch (\Throwable $th) {
             return [

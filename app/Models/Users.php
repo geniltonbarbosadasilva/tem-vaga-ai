@@ -97,6 +97,21 @@ class Users extends DataBase
     public function create($user)
     {
         try {
+            if (!Validation::validate(
+                $user,
+                [
+                    "name" => "require|string",
+                    "email" => "require|email|string",
+                    "password" => "require|string"
+                ]
+            )) {
+                return [
+                    "type" => "fail",
+                    "message" => Validation::getMessage(),
+                    "table" => "user"
+                ];
+            }
+
             [
                 "name" => $name,
                 "email" => $email,
@@ -130,6 +145,21 @@ class Users extends DataBase
     public function update($record)
     {
         try {
+            if (!Validation::validate(
+                $record,
+                [
+                    "name" => "require|string",
+                    "email" => "require|email|string",
+                    "password" => "require|string"
+                ]
+            )) {
+                return [
+                    "type" => "fail",
+                    "message" => Validation::getMessage(),
+                    "table" => "user"
+                ];
+            }
+
             [
                 "id" => $id,
                 "name" => $name,
@@ -170,7 +200,7 @@ class Users extends DataBase
             if ($results->num_rows > 0) {
                 return $results->fetch_array(MYSQLI_ASSOC);
             } else {
-                echo "0 results";
+                return false;
             }
         } catch (\Throwable $th) {
             return [

@@ -187,7 +187,7 @@ class Rents extends DataBase
             if ($results->num_rows > 0) {
                 return $results->fetch_array(MYSQLI_ASSOC);
             } else {
-                echo "0 results";
+                return false;
             }
         } catch (\Throwable $th) {
             return [

@@ -39,7 +39,7 @@ class Properties extends DataBase
                     </tr>";
 
                 while ($row = $results->fetch_assoc()) {
-                    [                         
+                    [
                         "id" => $id,
                         "id_owner" => $id_owner,
                         "title" => $title,
@@ -48,7 +48,7 @@ class Properties extends DataBase
                         "address" => $address
                     ] = $row;
                     $owner = $user->getRecordById($id_owner);
-                    $owner_name = (array_key_exists("name", $owner))? $owner["name"] : "";
+                    $owner_name = (array_key_exists("name", $owner)) ? $owner["name"] : "";
 
                     echo
                         "<tr>
@@ -83,7 +83,7 @@ class Properties extends DataBase
     {
         try {
             $images = new Images();
-            $imgs= $images->getImagesByOwnerId($id);
+            $imgs = $images->getImagesByOwnerId($id);
 
             foreach ($imgs as $img) {
                 $images->delete($img["id"]);
@@ -116,22 +116,38 @@ class Properties extends DataBase
     public function create($property, $imgs)
     {
         try {
+            if (!Validation::validate(
+                $property,
+                [
+                    "title" => "require|string",
+                    "price" => "require|number",
+                    "description" => "require|string",
+                    "address" => "require|string",    
+                ]
+            )) {
+                return [
+                    "type" => "fail",
+                    "message" => Validation::getMessage(),
+                    "table" => "property"
+                ];
+            }
+
             [
                 "id_owner" => $id_owner,
                 "title" => $title,
                 "price" => $price,
                 "description" => $description,
                 "address" => $address
-            ] = $property;                
+            ] = $property;
 
             $sql = "INSERT INTO Properties ( id_owner, title, price, description, address)
                     VALUES ('$id_owner', '$title', '$price', '$description', '$address')";
-                        
+
             if ($this->getConnection()->query($sql) === TRUE) {
-     
+
                 $images = new Images();
-                $response = $images->uploadImages( $this->getConnection()->insert_id, $imgs);
-                if( $response["type"] == "fail" ){
+                $response = $images->uploadImages($this->getConnection()->insert_id, $imgs);
+                if ($response["type"] == "fail") {
                     $response["table"] = "property";
                     return $response;
                 }
@@ -160,14 +176,30 @@ class Properties extends DataBase
     public function update($record)
     {
         try {
+            if (!Validation::validate(
+                $record,
+                [
+                    "title" => "require|string",
+                    "price" => "require|number",
+                    "description" => "require|string",
+                    "address" => "require|string",    
+                ]
+            )) {
+                return [
+                    "type" => "fail",
+                    "message" => Validation::getMessage(),
+                    "table" => "property"
+                ];
+            }
+
             [
                 "id" => $id,
                 "id_owner" => $id_owner,
                 "title" => $title,
                 "price" => $price,
                 "description" => $description,
-                "address" => $address                
-            ] = $record;                
+                "address" => $address
+            ] = $record;
 
             $sql = "UPDATE Properties SET id_owner='$id_owner', title='$title', price='$price', description='$description', address='$address' WHERE id=$id";
 
@@ -202,7 +234,7 @@ class Properties extends DataBase
             if ($results->num_rows > 0) {
                 return $results->fetch_array(MYSQLI_ASSOC);
             } else {
-                echo "0 results";
+                return false;
             }
         } catch (\Throwable $th) {
             return [

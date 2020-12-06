@@ -32,10 +32,17 @@ require_once("../autoload.php");
         $table = (isset($_GET["table"])) ? $_GET["table"] : "user";
 
         if ($table != "import") {
-            echo 
-            "<a href='create-$table.php'>
-                <button class='create-button transition'>Novo +</button>
-            </a>";
+            if ($table == "rent") {
+                echo 
+                "<a href='#' onclick='infoRent()'>
+                    <button class='create-button transition'>Novo +</button>
+                </a>";
+            } else {
+                echo 
+                "<a href='create-$table.php'>
+                    <button class='create-button transition'>Novo +</button>
+                </a>";                    
+            }
         }
 
         if (array_key_exists("message", $_GET)) {
@@ -70,7 +77,15 @@ require_once("../autoload.php");
                     <input accept='.csv' type='file' class='custom-file-input' id='customFile' name='file'>
                     
                     <button class='search-btn transition' type='submit'>Enviar</button>
-                </form>";
+                </form>                
+                <ul class='dark-text'>
+                    <h3 class='dark-text'>O arquivo csv deve seguir o seguinte padrão:</h3>
+                    <li>A primeira linha de conter os nomes das colunas</li>
+                    <li>Deve possuir as mesmas colunas da tabela no banco</li>
+                    <li>Colunas separadas por (,)</li>
+                    <li>Mesmo numero de colunas em todas linhas</li>
+                    <li>Se o texto conter (,) ele deve estar entre (\")</li>
+                </ul>";
                 break;
             default:
 

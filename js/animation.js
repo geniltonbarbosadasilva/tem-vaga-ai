@@ -3,6 +3,10 @@ function info() {
         + "Caso precise cancelar sua reserva, estamos com taxa 0 durante a pandemia");
 }
 
+function infoRent() {
+    alert("Para criar um novo registro de aluguel, escolha uma propriedade na pagina de resultados e click em Fechar Negocio");
+}
+
 function scrollFunction() {
     if (document.documentElement.scrollTop > 100) {
         document.getElementById("logo").style.width = "150px";
