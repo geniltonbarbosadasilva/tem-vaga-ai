@@ -2,6 +2,16 @@
 
 class Images extends DataBase
 {
+    private static $message = [                        
+        1 => "O arquivo enviado excede o limite de tamanho.",
+        2 => "O arquivo enviado excede o limite de tamanho.",
+        3 => "O upload do arquivo foi feito parcialmente.",
+        4 => "Nenhum arquivo foi enviado.",
+        6 => "Pasta temporária ausênte.",
+        7 => "Falha em escrever o arquivo em disco.",
+        8 => "Uma extensão do PHP interrompeu o upload do arquivo."
+    ];
+
     public function __construct()
     {
         parent::__construct();
@@ -45,6 +55,16 @@ class Images extends DataBase
     public function uploadImages( $id_property, $imgs)
     {
         try {
+            foreach ($imgs as $img) {
+                if ( $img["error"] != 0) {                    
+                    return [
+                        "type" => "fail",
+                        "message" => Images::$message[$img["error"]],
+                        "table" => "image"
+                    ];
+                }
+            }
+
             foreach ($imgs as $img) {
                 $response = $this->store( $img, $this->getLastId() );
                 if( $response["type"] == "success" ){
@@ -231,6 +251,14 @@ class Images extends DataBase
                 $oldmask = umask(0);
                 mkdir(PROJECT_DIRECTORY . "storage/", 0777, true);
                 umask($oldmask);
+            }            
+            
+            if ( $file["error"] != 0) {                    
+                return [
+                    "type" => "fail",
+                    "message" => Images::$message[$file["error"]],
+                    "table" => "image"
+                ];
             }
 
             // Check file size
