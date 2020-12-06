@@ -51,7 +51,7 @@
             }
         }
         ?>
-        <form class="create-form" action="<?php echo $action ?>" method="post" enctype="multipart/form-data">
+        <form id="form-property" class="create-form" action="<?php echo $action ?>" method="post" enctype="multipart/form-data">
             <input type="hidden" name="id" value="<?php echo $id ?>">
 
             <label for="id_owner">Proprietario:</label>
@@ -66,15 +66,19 @@
             </select>
 
             <label for="title">Titulo:</label>
+            <label id="error-title" for="title" class="error"></label>
             <input id="title" type="text" name="title" value="<?php echo $title ?>">
 
             <label for="price">Preço:</label>
+            <label id="error-price" for="price" class="error"></label>
             <input id="price" type="number" name="price" value="<?php echo $price ?>">
 
             <label for="description">Descrição:</label>
+            <label id="error-description" for="description" class="error"></label>
             <textarea id="description" name="description" rows="5"><?php echo $description ?></textarea>
 
             <label for="address">Endereço:</label>
+            <label id="error-address" for="address" class="error"></label>
             <input id="address" type="text" name="address" value="<?php echo $address ?>">
 
             <label for="image-1">Imagens:</label>
@@ -92,7 +96,7 @@
                     <img src=" <?php echo $sliders[2] ?> " class="preview-img" id="preview-img-3">
                 </span>
             </div>
-            <button class='search-btn transition' type="submit">Enviar</button>
+            <button class='search-btn transition' type="button" onclick="submitFormProperty()">Enviar</button>
         </form>
     </main>
 
@@ -104,6 +108,7 @@
     <script src="../js/app.js"></script>
     <script src="../js/slide.js"></script>
     <script src="../js/preview_img.js"></script>
+    <script src="../js/validation.js"></script>
 </body>
 
 </html>

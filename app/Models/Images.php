@@ -5,11 +5,11 @@ class Images extends DataBase
     private static $message = [                        
         1 => "A imagem enviada excede o limite de tamanho.",
         2 => "A imagem enviada excede o limite de tamanho.",
-        3 => "O upload do arquivo foi feito parcialmente.",
-        4 => "Nenhum arquivo foi enviado.",
+        3 => "O upload da imagem foi feito parcialmente.",
+        4 => "Nenhuma imagem foi enviada.",
         6 => "Pasta temporária ausênte.",
-        7 => "Falha em escrever o arquivo em disco.",
-        8 => "Uma extensão do PHP interrompeu o upload do arquivo."
+        7 => "Falha em escrever a imagemem no disco.",
+        8 => "Uma extensão do PHP interrompeu o upload da imagem."
     ];
 
     public function __construct()
@@ -274,7 +274,7 @@ class Images extends DataBase
             if ( getimagesize( $file["tmp_name"] ) === false ) {
                 return [
                     "type" => "fail",
-                    "message" => "Imagen inválido",
+                    "message" => "Imagem inválida",
                     "table" => "image"
                 ];
             }
@@ -286,7 +286,7 @@ class Images extends DataBase
             ) {
                 return [
                     "type" => "fail",
-                    "message" => "Apenas arquivos JPG, JPEG, PNG e GIF são permitidos.",
+                    "message" => "Apenas imagens JPG, JPEG, PNG e GIF são permitidos.",
                     "table" => "image"
                 ];
             }
@@ -301,7 +301,7 @@ class Images extends DataBase
             } else {
                 return [
                     "type" => "fail",
-                    "message" => "Ocorreu um erro ao enviar seu arquivo.",
+                    "message" => "Ocorreu um erro ao enviar sua imagem.",
                     "table" => "image"
                 ];
             }
