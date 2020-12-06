@@ -21,13 +21,12 @@ function userScreen()
         <div class='modal-content'>
             <div class='modal-container'>
                 <div id='login' class='login'>
+                    <button style='float:right' onclick='closeModal()' class='search-btn transition' type='button'><i class='fa fa-times'></i></button>                                            
                     <form action='../app/logout.php' method='post'>
                         <img src='../img/user.png'>
                         <label id='name-user-modal'></label>
                         <br><br>
-                        <button class='search-btn transition' type='submit'>Sair</button>
-                        <br>
-                        <button onclick='closeModal()' class='search-btn transition' type='button'>Fechar</button>                                            
+                        <button class='search-btn transition' type='submit'>Sair</button>                                                
                     </form>
                 </div>
             </div>
@@ -43,6 +42,7 @@ function loginScreen()
         <div class='modal-content'>
             <div class='modal-container'>
                 <div id='login' class='login'>
+                    <button style='float:right' onclick='closeModal()' class='search-btn transition' type='button'><i class='fa fa-times'></i></button>                                            
                     <form action='../app/login.php' method='post' autocomplete='off'>
                         <img src='../img/user.png'>
                         <input type='text' name='email' placeholder='Email'>
@@ -50,8 +50,6 @@ function loginScreen()
                         <input id='checkbox' type='checkbox' name='conected' checked>
                         <label for='checkbox'>Mantanha-me Conectado</label>
                         <button class='search-btn transition' type='submit'>Entrar</button>
-                        <br>
-                        <button onclick='closeModal()' class='search-btn transition' type='button'>Fechar</button>
                     </form>
                 </div>
             </div>
