@@ -173,7 +173,7 @@ class Properties extends DataBase
         }
     }
 
-    public function update($record)
+    public function update($record, $newImgs)
     {
         try {
             if (!Validation::validate(
@@ -201,9 +201,34 @@ class Properties extends DataBase
                 "address" => $address
             ] = $record;
 
+            $images = new Images();
+            $oldImgs = $images->getImagesByOwnerId($id);            
+            $i = 0;
+
+            foreach ($newImgs as $newImg) {
+                if( $newImg["error"] == 0 ){
+                    $response = $images->store( $newImg, $images->getLastId() );
+                    
+                    if ($response["type"] == "fail") {
+                        $response["table"] = "property";
+                        return $response;
+                    }    
+
+                    $images->create([
+                        "id_property" => $id,
+                        "title" => "image",
+                        "src" => $response["src"]
+                    ]);
+                        
+                    $images->delete($oldImgs[$i]["id"]);                    
+                }                    
+                $i++;
+            }
+
+
             $sql = "UPDATE Properties SET id_owner='$id_owner', title='$title', price='$price', description='$description', address='$address' WHERE id=$id";
 
-            if ($this->getConnection()->query($sql) === TRUE) {
+            if ($this->getConnection()->query($sql) === TRUE) {                                
                 return [
                     "type" => "success",
                     "message" => "Registro atualizado com sucesso",

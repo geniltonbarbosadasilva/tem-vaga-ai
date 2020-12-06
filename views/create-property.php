@@ -29,6 +29,7 @@
         $description = "";
         $address = "";
         $action = "../app/controller.php?operation=create&table=properties";
+        $sliders = [ '', '', ''];
 
         if (array_key_exists("id", $_GET)) {
             $property = new Properties();
@@ -41,6 +42,13 @@
                 "address" => $address
             ] = $property->getRecordById($_GET["id"]);
             $action = "../app/controller.php?id=$id&operation=update&table=properties";
+
+            $images = new Images();
+            $imgs = $images->getImagesByOwnerId($id);
+            foreach ($imgs as $key => $img) {
+                $sliders[$key] = 
+                    ( array_key_exists ( "src" , $img) )? "../" . $img["src"] : "";    
+            }
         }
         ?>
         <form class="create-form" action="<?php echo $action ?>" method="post" enctype="multipart/form-data">
@@ -73,15 +81,15 @@
             <div class="grid-container">
                 <span>
                     <input type="file" name="image-1" id="selector-image-1" accept="image/*">
-                    <img class="preview-img" id="preview-img-1">
+                    <img src=" <?php echo $sliders[0] ?> " class="preview-img" id="preview-img-1">
                 </span>
                 <span>
                     <input type="file" name="image-2" id="selector-image-2" accept="image/*">
-                    <img class="preview-img" id="preview-img-2">
+                    <img src=" <?php echo $sliders[1] ?> " class="preview-img" id="preview-img-2">
                 </span>
                 <span>
                     <input type="file" name="image-3" id="selector-image-3" accept="image/*">
-                    <img class="preview-img" id="preview-img-3">
+                    <img src=" <?php echo $sliders[2] ?> " class="preview-img" id="preview-img-3">
                 </span>
             </div>
             <button class='search-btn transition' type="submit">Enviar</button>
