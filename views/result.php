@@ -34,7 +34,7 @@
 			
 			foreach ( $properties as $property ) {
 				$address = strtolower(trim($property["address"]));
-				if ( $where != "" && strpos( $address, $where ) !== false ) {
+				if ( $where == "" || strpos( $address, $where ) !== false ) {
 					[					
 						"id" => $id,
 						"title" => $title,
@@ -68,6 +68,10 @@
 	<!-- Preenche a pagina com JavaScript -->
 	<script src="../js/app.js"></script> 
 	<script src="../js/slide.js"></script>
+	<script>
+		let where = new URL(window.location.href).searchParams.get('where');
+		document.getElementById('search-local').value = where;
+	</script>
 </body>
 
 </html>

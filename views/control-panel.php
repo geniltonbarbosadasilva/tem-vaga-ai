@@ -68,7 +68,7 @@ require_once("../autoload.php");
                     <label>Table:</label>
                     <select name='table'>    
                         <option value='users'>Users</option>                
-                        <option value='property'>Property</option>
+                        <option value='properties'>Property</option>
                         <option value='rents'>Rents</option>
                         <option value='images'>Images</option>
                         <option value='tokens'>Tokens</option>

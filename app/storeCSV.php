@@ -62,7 +62,7 @@ try {
                 $insert[$column] = $values[$key];
             }
 
-            $response = $table->create($insert);
+            $response = $table->create($insert, []);
         }
 
         if ($response["type"]  == "fail") {
