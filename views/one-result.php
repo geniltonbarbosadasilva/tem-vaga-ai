@@ -51,7 +51,7 @@
                     <p class='green-text'>$price</p>
                     <p class='text'>$description</p>
                     <p class='text'>$address</p>
-                    <button class='search-btn transition' type='button'>Fechar Negócio!</button>
+                    <button id='close-deal' class='search-btn transition' type='button'>Fechar Negócio!</button>
                 </div>";
                             
                 ?>
@@ -64,6 +64,22 @@
     <script src="../js/animation.js"></script>
     <script src="../js/app.js"></script>
     <script src="../js/slide.js"></script>
+    <script>
+        const closeDear = document.getElementById("close-deal");
+
+        if( localStorage.id_user ){
+            let id = new URL(window.location.href).searchParams.get('id');
+            closeDear.addEventListener( "click", ()=>{
+                window.location.href = 
+                `../app/closeDeal.php?id_user=${localStorage.id_user}&id_property=${id}`;
+            });
+        } else {
+            closeDear.addEventListener( "click", ()=>{
+                alert("Faça Login primeiro")
+            });
+        }
+
+    </script>
 </body>
 
 </html>

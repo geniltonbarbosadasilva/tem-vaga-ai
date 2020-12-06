@@ -83,3 +83,15 @@ function closeModal() {
 }
 
 // window.onload = function () { loadContent() }
+
+const loginBtn = document.getElementById("login-btn");
+loginBtn.addEventListener( "click", openModal);
+
+
+if ( localStorage.id_user ) {
+    loginBtn.innerText = "Conta";
+    loginBtn.removeEventListener( "click", openModal);
+    loginBtn.addEventListener( "click", () => {
+        alert("Usuario numero: " + localStorage.id_user)
+    });
+}

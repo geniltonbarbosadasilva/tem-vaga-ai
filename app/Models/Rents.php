@@ -23,6 +23,10 @@ class Rents extends DataBase
                     "operation" => "delete",
                     "table" => "rents"
                 ]);
+                $checkOutPath = http_build_query([
+                    "operation" => "check_out",
+                    "table" => "rents"
+                ]);
 
                 $users = new Users();
                 $properties = new Properties();
@@ -62,8 +66,8 @@ class Rents extends DataBase
                             <td>$check_in</td>
                             <td>$check_out</td>
                             <td>
-                                <a href='create-rent.php?id=$id'>
-                                    <i class=\"transition fa fa-pencil\"></i>
+                                <a href='../app/controller.php?id=$id&$checkOutPath'>
+                                    <i class=\"transition fa fa-sign-out\"></i>
                                 </a>
                             </td>
                             <td>
@@ -115,12 +119,12 @@ class Rents extends DataBase
             [                         
                 "id_user" => $id_user,
                 "id_property" => $id_property,
-                "check_in" => $check_in,
-                "check_out" => $check_out
+                "check_in" => $check_in
             ] = $rent;                
 
-            $sql = "INSERT INTO Rents ( id_user, id_property, check_in, check_out)
-                    VALUES ( '$id_user', '$id_property', '$check_in', '$check_out')";
+            $sql = "INSERT INTO Rents ( id_user, id_property, check_in)
+                    VALUES ( '$id_user', '$id_property', '$check_in')";
+
             if ($this->getConnection()->query($sql) === TRUE) {
                 return [
                     "type" => "success",
@@ -155,6 +159,32 @@ class Rents extends DataBase
             ] = $record;                
 
             $sql = "UPDATE Rents SET id_user='$id_user', id_property='$id_property', check_in='$check_in', check_out='$check_out' WHERE id=$id";
+
+            if ($this->getConnection()->query($sql) === TRUE) {
+                return [
+                    "type" => "success",
+                    "message" => "Registro atualizado com sucesso",
+                    "table" => "rent"
+                ];
+            } else {
+                return [
+                    "type" => "fail",
+                    "message" => $this->getConnection()->error,
+                    "table" => "rent"
+                ];
+            }
+        } catch (\Throwable $th) {
+            return [
+                "type" => "fail",
+                "message" => "Exceção capturada: " . $th->getMessage(),
+                "table" => "rent"
+            ];
+        }
+    }
+
+    public function checkOut( $date, $id){
+        try {
+            $sql = "UPDATE Rents SET check_out='$date' WHERE id=$id";
 
             if ($this->getConnection()->query($sql) === TRUE) {
                 return [

@@ -24,9 +24,11 @@ if ($_GET["operation"] === "delete") {
 
 if ($_GET["operation"] === "update") {
     $response = $table->update($_POST, $_FILES);
-    // echo "<pre>";
-    // print_r($response);
-    // echo "</pre>";
+    Utils::redirect_to("../views/control-panel.php", $response);
+}
+
+if ($_GET["operation"] === "check_out") {
+    $response = $table->checkOut(date("Y-m-d"), $_GET["id"]);
     Utils::redirect_to("../views/control-panel.php", $response);
 }
 

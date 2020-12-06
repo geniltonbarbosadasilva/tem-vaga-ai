@@ -22,13 +22,13 @@ function loginScreen()
         <div class='modal-content'>
             <div class='modal-container'>
                 <div id='login' class='login'>
-                    <form autocomplete='off'>
+                    <form action='../app/login.php' method='post' autocomplete='off'>
                         <img src='../img/user.png'>
                         <input type='text' name='email' placeholder='Email'>
                         <input type='password' name='password' placeholder='Password'>
                         <input id='checkbox' type='checkbox' name='conected' checked>
                         <label for='checkbox'>Mantanha-me Conectado</label>
-                        <button onclick='closeModal()' class='search-btn transition' type='button'>Entrar</button>
+                        <button class='search-btn transition' type='submit'>Entrar</button>
                     </form>
                 </div>
             </div>
@@ -52,7 +52,7 @@ function headerHome()
             </div>
             <div class='menu'>                
                 <ul>                    
-                    <li><a href='#' onclick='openModal()' class='transition'>Entre</a></li>
+                    <li><a id='login-btn' href='#' class='transition'>Entre</a></li>
                     <li><a class='transition' href='control-panel.php'>Seja um anfitrião</a></li>
                 </ul>
             </div>
@@ -88,7 +88,7 @@ function headerResult()
             </div>
             <div class='menu'>
                 <ul>
-                    <li><a class='transition' onclick='openModal()'>Entre</a></li>
+                    <li><a id='login-btn' class='transition'>Entre</a></li>
                     <li><a class=' transition' href='control-panel.php'>Seja um anfitrião</a></li>
                 </ul>                
             </div>

@@ -132,4 +132,12 @@ class Tokens extends DataBase
             ];
         }
     }
+
+    public function deleteAll()
+    {
+        $tokens = $this->all();
+        foreach ($tokens as $token) {
+            $this->delete($token["id"]);
+        }
+    }
 }
