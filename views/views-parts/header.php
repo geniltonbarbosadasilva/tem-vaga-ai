@@ -14,6 +14,25 @@ function dropDown()
     return $citys;
 }
 
+function userScreen()
+{
+    return
+    "<div id='id-user-modal' class='modal'>
+        <div class='modal-content'>
+            <div class='modal-container'>
+                <div id='login' class='login'>
+                    <form action='../app/logout.php' method='post'>
+                        <img src='../img/user.png'>
+                        <label id='name-user-modal'></label>
+                        <br><br>
+                        <button class='search-btn transition' type='submit'>Sair</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>";
+}
+
 function loginScreen()
 {
     return
@@ -39,6 +58,7 @@ function loginScreen()
 function headerHome()
 {
     $loginScreen = loginScreen();
+    $logout = userScreen();
     echo 
     "<header>
         <div class='navbar'>
@@ -58,12 +78,14 @@ function headerHome()
             </div>
         </div>
         $loginScreen 
+        $logout
     </header>";
 }
 
 function headerResult()
 {
     $loginScreen = loginScreen();
+    $logout = userScreen();
     $dropDown = dropDown();
     echo 
     "<header>
@@ -94,6 +116,7 @@ function headerResult()
             </div>
         </div>
         $loginScreen
+        $logout
     </header>";
 }
 

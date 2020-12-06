@@ -78,8 +78,13 @@ function openModal() {
     document.getElementById("id-modal").style.display="block";
 }
 
+function openUserModal() {
+    document.getElementById("name-user-modal").innerText = localStorage.name_user;
+    document.getElementById("id-user-modal").style.display="block";
+}
+
 function closeModal() {
-    document.getElementById("id-modal").style.display="none";
+    document.getElementById("id-user-modal").style.display="none";
 }
 
 // window.onload = function () { loadContent() }
@@ -91,7 +96,5 @@ loginBtn.addEventListener( "click", openModal);
 if ( localStorage.id_user ) {
     loginBtn.innerText = "Conta";
     loginBtn.removeEventListener( "click", openModal);
-    loginBtn.addEventListener( "click", () => {
-        alert("Usuario numero: " + localStorage.id_user)
-    });
+    loginBtn.addEventListener( "click", openUserModal);
 }
